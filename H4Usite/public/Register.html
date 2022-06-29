@@ -1,0 +1,106 @@
+<!-- Created By Codecary -->
+<html lang="pt-pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro | H4U</title>
+  <link rel="stylesheet" href="../css/login.css" />
+  <script src="../js/main.js"></script>
+</head>
+
+<body>
+  <div class="create">
+    <div class="overlay"></div>
+    <div class="account">
+      <div class="img-h4u-white">
+        <img src="../images/H4U_white.png" alt="" />
+      </div>
+      <br />
+      <h2>Registro</h2>
+      <form>
+        <div class="group">
+          <label>Nome</label>
+          <i class="fas fa-envelope"></i><input type="text"  id="Nome" placeholder="ex: Hugo Gomes" />
+        </div>
+
+        <div class="group">
+          <label>Email</label>
+          <i class="fas fa-envelope"></i><input type="email" id="Email" placeholder="examplo@compania.com" />
+        </div>
+
+        <div class="group">
+          <label>Género</label>
+          <i class="fas fa-envelope"></i>
+          <select name="Genero" id="Genero">
+            <option></option>
+            <option value="Masculino">maculino</option>
+            <option value="Femenino">femenino</option>
+            <option value="Outro">Outro...</option>
+          </select>
+        </div>
+
+        <div class="group">
+          <label>Data de Nascimento</label>
+          <i class="fas fa-envelope"></i><input type="date" id="Dtn" placeholder="Nome" />
+        </div>
+
+        <div class="group">
+          <label>Distrito</label>
+          <i class="fas fa-envelope"></i>
+          <select name="Distritos" id="Regiao">
+            <option></option>
+            <option value="Aveiro">Aveiro</option>
+            <option value="Beja">Beja</option>
+            <option value="Braga">Braga</option>
+            <option value="Bragança">Bragança</option>
+            <option value="Castelo Branco">Castelo Branco</option>
+            <option value="Coimbra">Coimbra</option>
+            <option value="Évora">Évora</option>
+            <option value="Faro">Faro</option>
+            <option value="Guarda">Guarda</option>
+            <option value="Leiria">Leiria</option>
+            <option value="Lisboa">Lisboa</option>
+            <option value="Portalegre">Portalegre</option>
+            <option value="Porto">Porto</option>
+            <option value="Santarém">Santarém</option>
+            <option value="Setúbal">Setúbal</option>
+            <option value="Viana do Castelo">Viana do Castelo</option>
+            <option value="Vila Real">Vila Real</option>
+            <option value="Viseu">Viseu</option>
+          </select>
+        </div>
+
+          <div class="group">
+          <label>Rua</label>
+          <i class="fas fa-envelope"></i><input type="text"  id="Morada" placeholder="Ex: Rua 1º de Maio" />
+        </div>
+
+        <div class="group">
+          <label>Password</label>
+          <i class="fas fa-unlock-alt"></i><input type="password" id="Password" placeholder="Password" />
+        </div>
+
+        <div class="group">
+          <label>Confirmar Password</label>
+          <i class="fas fa-unlock-alt"></i><input type="password" id="Rpassword" placeholder="Confirmar 
+ Password" />
+        </div>
+
+        <div class="radio">
+          <input type="radio" />
+          <label>Eu concordo com os termos e condições</label>
+        </div>
+
+        <input type="button" onclick="register()" value="Sign in" />
+
+        <p>
+          Já tens conta? →
+     <a href="../index.html">H4U</a> 
+        </p>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
