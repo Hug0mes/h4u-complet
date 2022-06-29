@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{98F6AEFC-14E4-4416-B677-09710B306E58}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Help4U</RootNamespace>
+    <AssemblyName>Help4U</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\..\..\..\Downloads\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.3.2, Culture=neutral, PublicKeyToken=4015e4865bda28a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.3.2\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data, Version=8.0.29.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="1-Principal\adm_Trabalho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1-Principal\adm_Trabalho.Designer.cs">
+      <DependentUpon>adm_Trabalho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil-Pessoal\definicoes_perfilPessoal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Perfil-Pessoal\definicoes_perfilPessoal.Designer.cs">
+      <DependentUpon>definicoes_perfilPessoal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="3-Mais Trabalhos\maisTrabalho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3-Mais Trabalhos\maisTrabalho.Designer.cs">
+      <DependentUpon>maisTrabalho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="4-Proc-Perfil\outroPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="4-Proc-Perfil\outroPerfil.Designer.cs">
+      <DependentUpon>outroPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil-Pessoal\4-perfil-Senha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Perfil-Pessoal\4-perfil-Senha.Designer.cs">
+      <DependentUpon>4-perfil-Senha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil-Pessoal\3-conta-Config.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Perfil-Pessoal\3-conta-Config.Designer.cs">
+      <DependentUpon>3-conta-Config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil-Pessoal\2-perfil-Config.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Perfil-Pessoal\2-perfil-Config.Designer.cs">
+      <DependentUpon>2-perfil-Config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil-Pessoal\1-perfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Perfil-Pessoal\1-perfil.Designer.cs">
+      <DependentUpon>1-perfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="1-Principal\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1-Principal\Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="4-Proc-Perfil\procPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="4-Proc-Perfil\procPerfil.Designer.cs">
+      <DependentUpon>procPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="1-Principal\removerConta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1-Principal\removerConta.Designer.cs">
+      <DependentUpon>removerConta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tops\top1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tops\top1.Designer.cs">
+      <DependentUpon>top1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tops\top2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tops\top2.Designer.cs">
+      <DependentUpon>top2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="2-Trabalhos\1-trabalho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2-Trabalhos\1-trabalho.Designer.cs">
+      <DependentUpon>1-trabalho.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="2-Trabalhos\1-trabalho.resx">
+      <DependentUpon>1-trabalho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3-Mais Trabalhos\maisTrabalho.resx">
+      <DependentUpon>maisTrabalho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="4-Proc-Perfil\outroPerfil.resx">
+      <DependentUpon>outroPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="4-Proc-Perfil\procPerfil.resx">
+      <DependentUpon>procPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1-Principal\adm_Trabalho.resx">
+      <DependentUpon>adm_Trabalho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Perfil-Pessoal\3-conta-Config.resx">
+      <DependentUpon>3-conta-Config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Perfil-Pessoal\2-perfil-Config.resx">
+      <DependentUpon>2-perfil-Config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Perfil-Pessoal\1-perfil.resx">
+      <DependentUpon>1-perfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1-Principal\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Perfil-Pessoal\4-perfil-Senha.resx">
+      <DependentUpon>4-perfil-Senha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Perfil-Pessoal\definicoes_perfilPessoal.resx">
+      <DependentUpon>definicoes_perfilPessoal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="1-Principal\removerConta.resx">
+      <DependentUpon>removerConta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tops\top1.resx">
+      <DependentUpon>top1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tops\top2.resx">
+      <DependentUpon>top2.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\H4U_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\instagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-mini.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\work.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\engrenagem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Noimage.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
