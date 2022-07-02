@@ -266,11 +266,11 @@
             // 
             this.guna2CirclePictureBox2.Image = global::Help4U.Properties.Resources.H4U_logo;
             this.guna2CirclePictureBox2.ImageRotate = 0F;
-            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(28, 17);
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(23, 19);
             this.guna2CirclePictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
             this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(120, 130);
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(130, 130);
             this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2CirclePictureBox2.TabIndex = 20;
             this.guna2CirclePictureBox2.TabStop = false;
@@ -357,10 +357,10 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(180, -1);
+            this.panel2.Location = new System.Drawing.Point(182, 4);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(802, 625);
+            this.panel2.Size = new System.Drawing.Size(801, 625);
             this.panel2.TabIndex = 20;
             // 
             // panel3
@@ -372,10 +372,10 @@
             this.panel3.Controls.Add(this.guna2ControlBox2);
             this.panel3.Controls.Add(this.guna2PictureBox2);
             this.panel3.Controls.Add(this.guna2PictureBox1);
-            this.panel3.Location = new System.Drawing.Point(3, 0);
+            this.panel3.Location = new System.Drawing.Point(3, -7);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(802, 625);
+            this.panel3.Size = new System.Drawing.Size(787, 625);
             this.panel3.TabIndex = 0;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -415,7 +415,7 @@
             this.guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(98)))), ((int)(((byte)(112)))));
             this.guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.Red;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(756, 5);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(741, 5);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(35, 28);
             this.guna2ControlBox1.TabIndex = 71;
@@ -428,7 +428,7 @@
             this.guna2ControlBox2.CustomClick = true;
             this.guna2ControlBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(98)))), ((int)(((byte)(112)))));
             this.guna2ControlBox2.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(715, 5);
+            this.guna2ControlBox2.Location = new System.Drawing.Point(700, 5);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.Size = new System.Drawing.Size(35, 28);
             this.guna2ControlBox2.TabIndex = 70;
@@ -457,7 +457,7 @@
             this.guna2PictureBox1.Location = new System.Drawing.Point(11, 41);
             this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(780, 238);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(765, 238);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 68;
             this.guna2PictureBox1.TabStop = false;
@@ -480,6 +480,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HELP4U";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.Principal_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);

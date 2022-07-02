@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,20 +20,80 @@ namespace Help4U
             InitializeComponent();
         }
 
-        public static string idlocal = "11";
+     
         public static string IdTrabalhoAtual;
-        public static int lastrow;
+
+        string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
+
 
         private void maisTrabalho_Load(object sender, EventArgs e)
         {
 
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Image = new Bitmap(open.FileName);
+            }
+
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox2.Image = new Bitmap(open.FileName);
+            }
+
+      
+        }
+
+        private void pictureBox3_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox3.Image = new Bitmap(open.FileName);
+            }
+          
+        }
+
+        private void pictureBox4_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox4.Image = new Bitmap(open.FileName);
+            }
+
+        }
+
+
+        private void pictureBox5_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox5.Image = new Bitmap(open.FileName);
+            }
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
 
+
             //Guardar informação do trabalho
-            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
-            string query = "INSERT INTO trabalho(`IdTrabalho`, `IdUser`, `Titulo`, `Data`, `Localização`, `Tipo`, `Preço`, `Estado`, `Descricao`) VALUES (NULL, '" + idlocal + "', '" + textBox1.Text + "', '" + dateTimePicker1.Text + "','" + comboBox1.SelectedText + "','" + comboBox2.SelectedText + "', '" + textBox2.Text + "', 'Ativo' , '" + textBox6.Text + "')";
+            string query = "INSERT INTO trabalho(`IdTrabalho`, `IdUser`, `Titulo`, `Data`, `Localização`, `Tipo`, `Preço`, `Estado`, `Descricao`) VALUES (NULL, '" + Login.idlocal + "', '" + textBox1.Text + "', '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + comboBox1.GetItemText(comboBox1.SelectedItem) + "','" + comboBox2.GetItemText(comboBox2.SelectedItem) + "', '" + textBox2.Text + "', 'Ativo' , '" + textBox6.Text + "')";
 
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
@@ -42,71 +104,129 @@ namespace Help4U
                 databaseConnection.Open();
                 MySqlDataReader myReader = commandDatabase.ExecuteReader();
                 databaseConnection.Close();
+
+
+                MessageBox.Show("Trabalho inserido");
+
             }
             catch (Exception ex)
             { MessageBox.Show(ex.Message); }
 
+
             //Guardar Id do trabalho a cima
-            string query1 = "Select IdTrabalho from trabalho";
+            string query1 = "SELECT IdTrabalho FROM trabalho ORDER BY IdTrabalho DESC LIMIT 1;";
             MySqlDataAdapter sda = new MySqlDataAdapter(query1, connectionString);
             DataTable dataTable = new DataTable();
             sda.Fill(dataTable);
 
-            lastrow = dataTable.Rows.Count;
+            //ultimalinha
+            MySqlConnection databaseConnection1 = new MySqlConnection(connectionString);
+            MySqlCommand commandDatabase1 = new MySqlCommand(query1, databaseConnection1);
+            commandDatabase1.CommandTimeout = 60;
+            MySqlDataReader reader;
 
 
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.bmp)|*.jpg; *.jpeg; *.bmp";
-            if (open.ShowDialog() == DialogResult.OK)
+            try
             {
-                pictureBox1.Image = new Bitmap(open.FileName);
-            }
-        }
+                databaseConnection1.Open();
+                reader = commandDatabase1.ExecuteReader();
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            if (open.ShowDialog() == DialogResult.OK)
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        IdTrabalhoAtual = reader.GetString(0);
+
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No rows found.");
+                }
+
+                databaseConnection.Close();
+            }
+            catch (Exception ex)
             {
-                pictureBox2.Image = new Bitmap(open.FileName);
+                MessageBox.Show(ex.Message);
             }
+
+           try {
+             
+
+
+
+
+            MemoryStream ms1 = new MemoryStream();
+            MemoryStream ms2 = new MemoryStream();
+            MemoryStream ms3 = new MemoryStream();
+            MemoryStream ms4 = new MemoryStream();
+            MemoryStream ms5 = new MemoryStream();
+
+                
+            pictureBox1.Image.Save(ms1, ImageFormat.Png);
+            pictureBox2.Image.Save(ms2, ImageFormat.Png);
+            pictureBox3.Image.Save(ms3, ImageFormat.Png);
+            pictureBox4.Image.Save(ms4, ImageFormat.Png);
+            pictureBox5.Image.Save(ms5, ImageFormat.Png);
+
+            byte[] pic_arr1 = new byte[ms1.Length];
+            byte[] pic_arr2 = new byte[ms2.Length];
+            byte[] pic_arr3 = new byte[ms3.Length];
+            byte[] pic_arr4 = new byte[ms4.Length];
+            byte[] pic_arr5 = new byte[ms5.Length];
+
+            ms1.Position = 0;
+            ms2.Position = 0;
+            ms3.Position = 0;
+            ms4.Position = 0;
+            ms5.Position = 0;
+
+            ms1.Read(pic_arr1, 0, pic_arr1.Length);
+            ms2.Read(pic_arr2, 0, pic_arr2.Length);
+            ms3.Read(pic_arr3, 0, pic_arr3.Length);
+            ms4.Read(pic_arr4, 0, pic_arr4.Length);
+            ms5.Read(pic_arr5, 0, pic_arr5.Length);
+
+
+
+            databaseConnection.Open();
+            MySqlCommand cmd1 = new MySqlCommand("insert into trabalho_fotos(Id_Trabalho, Fotos, N_foto)values( '"+ IdTrabalhoAtual +"',@img1, '1')", databaseConnection);
+            cmd1.Parameters.AddWithValue("@img1", pic_arr1);
+
+            MySqlCommand cmd2 = new MySqlCommand("insert into trabalho_fotos(Id_Trabalho, Fotos, N_foto)values( '" + IdTrabalhoAtual + "',@img2, '2')", databaseConnection);
+            cmd2.Parameters.AddWithValue("@img2", pic_arr2);
+
+            MySqlCommand cmd3 = new MySqlCommand("insert into trabalho_fotos(Id_Trabalho, Fotos, N_foto)values( '" + IdTrabalhoAtual + "',@img3, '3')", databaseConnection);
+            cmd3.Parameters.AddWithValue("@img3", pic_arr3);
+
+            MySqlCommand cmd4 = new MySqlCommand("insert into trabalho_fotos(Id_Trabalho, Fotos, N_foto)values( '" + IdTrabalhoAtual + "',@img4, '4')", databaseConnection);
+            cmd4.Parameters.AddWithValue("@img4", pic_arr4);
+
+            MySqlCommand cmd5 = new MySqlCommand("insert into trabalho_fotos(Id_Trabalho, Fotos, N_foto)values( '" + IdTrabalhoAtual + "',@img5, '5')", databaseConnection);
+            cmd5.Parameters.AddWithValue("@img5", pic_arr5);
+
+
+
+            int n1 = cmd1.ExecuteNonQuery();
+            int n2 = cmd2.ExecuteNonQuery();
+            int n3 = cmd3.ExecuteNonQuery();
+            int n4 = cmd4.ExecuteNonQuery();
+            int n5 = cmd5.ExecuteNonQuery();
+
+            databaseConnection.Close();
+
+            MessageBox.Show("Imagens inseridas");
+
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message); }
+
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            if (open.ShowDialog() == DialogResult.OK)
-            {
-                pictureBox3.Image = new Bitmap(open.FileName);
-            }
-        }
+    
 
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            if (open.ShowDialog() == DialogResult.OK)
-            {
-                pictureBox4.Image = new Bitmap(open.FileName);
-            }
-        }
+        
+    }
+    }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            if (open.ShowDialog() == DialogResult.OK)
-            {
-                pictureBox5.Image = new Bitmap(open.FileName);
-            }
-        }
-
-        }
-}

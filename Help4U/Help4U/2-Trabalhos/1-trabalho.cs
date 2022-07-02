@@ -45,7 +45,7 @@ namespace Help4U
 
 
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
-            string query = "Select Id,Nome,Foto from users INner join userfotos on Id = IdUsers;";
+            string query = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1;";
 
             MySqlDataAdapter sda = new MySqlDataAdapter(query, connectionString);
             DataTable dt = new DataTable();
@@ -57,7 +57,8 @@ namespace Help4U
 
             foreach (DataRow row in dt.Rows)
             {
-
+                try 
+                { 
 
                 images.ColorDepth = ColorDepth.Depth32Bit;
 
@@ -65,7 +66,7 @@ namespace Help4U
                 listView1.LargeImageList.ImageSize = new System.Drawing.Size(110, 110);
 
 
-                byte[] imagebyte = (byte[])(row[2]);
+                byte[] imagebyte = (byte[])(row[10]);
 
                 MemoryStream image_stream = new MemoryStream(imagebyte);
 
@@ -79,14 +80,21 @@ namespace Help4U
 
                 item.ImageIndex = i;
 
-                item.Text = row["Nome"].ToString();
+                item.Text = row["Titulo"].ToString();
+                item.Text = row["Localização"].ToString();
 
-
-                i += 1;
+                    i += 1;
 
                 this.listView1.Items.Add(item);
 
             }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 
        

@@ -200,7 +200,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.listView1);
-            this.panel1.Location = new System.Drawing.Point(11, 87);
+            this.panel1.Location = new System.Drawing.Point(2, 74);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(794, 551);
@@ -213,7 +213,7 @@
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(40, 16);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(679, 267);
+            this.listView1.Size = new System.Drawing.Size(679, 515);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 

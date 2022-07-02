@@ -67,6 +67,7 @@ namespace Help4U
                     idlocal = row[0].ToString();
                 }
 
+
                 //adicionar foto de perfil caso não tenha
                 string query1 = "Select * from userfotos where IdUsers = '" + idlocal + "'";
                 MySqlDataAdapter sda1 = new MySqlDataAdapter(query1, connectionString);
@@ -81,12 +82,12 @@ namespace Help4U
                     MySqlConnection databaseConnection = new MySqlConnection(connectionString);
                     MySqlCommand commandDatabase = new MySqlCommand(query2, databaseConnection);
                     commandDatabase.CommandTimeout = 60;
-
+                    
                     try
                     {
                         databaseConnection.Open();
                         MySqlDataReader myReader = commandDatabase.ExecuteReader();
-                        MessageBox.Show("Imagem inserida");
+                        //MessageBox.Show("Imagem inserida");
 
                         databaseConnection.Close();
                     }
@@ -155,6 +156,11 @@ namespace Help4U
         private void guna2ControlBox2_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://127.0.0.1:5501/public/Register.html");
         }
     }
 }

@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.IO;
+
 
 namespace Help4U
 {
@@ -18,8 +21,35 @@ namespace Help4U
             InitializeComponent();
         }
 
+        MySqlConnection connectionString = new MySqlConnection("datasource = 127.0.0.1; port = 3306; username = root; password =; database = h4u;");
+ 
+
+
         public void loadform(object Form)
         {
+
+         
+
+
+            //databaseConnection.Open();
+            //SqlCommand cmd = new SqlCommand("Select * from users Inner join userfotos on Id = IdUsers where Id = '" + Login.idlocal + "';", databaseConnection);
+            //SqlDataReader dr = cmd.ExecuteReader();
+            //if (dr.Read())
+            //{
+            //    string image = Convert.ToString(DateTime.Now.ToFileTime());
+            //    byte[] bimage = (byte[])dr["Foto"];
+            //    FileStream fs = new FileStream(image, FileMode.CreateNew, FileAccess.Write);
+            //    fs.Write(bimage, 0, bimage.Length - 1);
+            //    fs.Close();
+            //    guna2CirclePictureBox2.Image = Image.FromFile(image);
+            //}
+            //dr.Close();
+            //databaseConnection.Close();
+
+
+
+
+
             if (this.panel2.Controls.Count > 0)
                 this.panel2.Controls.RemoveAt(0);
             Form f = Form as Form;
@@ -29,15 +59,6 @@ namespace Help4U
             this.panel2.Tag = f;
             f.Show();
 
-
-
-            //imagem de Perfil
-            //string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
-            //string query = "Select Foto from users Inner join userfotos on Id = IdUsers;";
-
-            //MySqlDataAdapter sda = new MySqlDataAdapter(query, connectionString);
-            //DataTable dt = new DataTable();
-            //sda.Fill(dt);
 
 
         }
@@ -89,6 +110,30 @@ namespace Help4U
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
+            //imagem de Perfil
+            try
+            {
+            String query1 = "Select * from users Inner join userfotos on Id = IdUsers where Id = '" +  Login.idlocal + "'";
+            MySqlDataAdapter da = new MySqlDataAdapter(query1, connectionString);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+           
+            label1.Text = dt.Rows[0][3].ToString();
+            byte[] img = (byte[])dt.Rows[0][14];
+            MemoryStream ms = new MemoryStream(img);
+            guna2CirclePictureBox2.Image = Image.FromStream(ms);
+            da.Dispose();
+
+            }
+            catch (Exception ex)
+            {  // Show any error message.
+                MessageBox.Show(ex.Message);}
 
         }
     }

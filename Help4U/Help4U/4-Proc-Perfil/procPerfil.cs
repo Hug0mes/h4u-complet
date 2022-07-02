@@ -55,8 +55,6 @@ namespace Help4U
         private void procPerfil_Load(object sender, EventArgs e)
         {
 
-
-
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
             string query = "Select Id,Nome,Foto from users INner join userfotos on Id = IdUsers;";
 
@@ -71,6 +69,8 @@ namespace Help4U
             foreach (DataRow row in dt.Rows)
             {
 
+                try 
+                { 
 
                 images.ColorDepth = ColorDepth.Depth32Bit;
 
@@ -98,8 +98,15 @@ namespace Help4U
 
                 this.listView1.Items.Add(item);
 
-
             }
+            catch (Exception ex)
+            {
+                // Show any error message.
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
 
         }
         
