@@ -22,6 +22,7 @@ namespace Help4U
 
         bool mover = false;
         Point Pinicial;
+        public static string selectUser;
 
         private void lable1_MouseDown_1(object sender, MouseEventArgs e)
         {
@@ -93,8 +94,9 @@ namespace Help4U
                 item.ImageIndex = i;
  
                 item.Text = row["Nome"].ToString();
+                item.SubItems.Add(row["Id"].ToString());
 
-                i += 1;
+                             i += 1;
 
                 this.listView1.Items.Add(item);
 
@@ -119,6 +121,14 @@ namespace Help4U
         private void guna2RatingStar1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void listView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            selectUser = listView1.SelectedItems[0].SubItems[1].Text;
+            outroPerfil op = new outroPerfil();
+            op.Show();
+         
         }
     }
 }

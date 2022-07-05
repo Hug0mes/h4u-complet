@@ -28,29 +28,8 @@ namespace Help4U
         public void loadform(object Form)
         {
 
-         
 
-
-            //databaseConnection.Open();
-            //SqlCommand cmd = new SqlCommand("Select * from users Inner join userfotos on Id = IdUsers where Id = '" + Login.idlocal + "';", databaseConnection);
-            //SqlDataReader dr = cmd.ExecuteReader();
-            //if (dr.Read())
-            //{
-            //    string image = Convert.ToString(DateTime.Now.ToFileTime());
-            //    byte[] bimage = (byte[])dr["Foto"];
-            //    FileStream fs = new FileStream(image, FileMode.CreateNew, FileAccess.Write);
-            //    fs.Write(bimage, 0, bimage.Length - 1);
-            //    fs.Close();
-            //    guna2CirclePictureBox2.Image = Image.FromFile(image);
-            //}
-            //dr.Close();
-            //databaseConnection.Close();
-
-
-
-
-
-            if (this.panel2.Controls.Count > 0)
+                if (this.panel2.Controls.Count > 0)
                 this.panel2.Controls.RemoveAt(0);
             Form f = Form as Form;
             f.TopLevel = false;
@@ -115,6 +94,19 @@ namespace Help4U
 
         private void Principal_Load(object sender, EventArgs e)
         {
+            //Verificar se é ADM
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
+            string query = "Select * from users where Adm = 1 and Id = '" + Login.idlocal + "'; ";
+
+            MySqlDataAdapter sda = new MySqlDataAdapter(query, connectionString);
+            DataTable dataTable = new DataTable();
+            sda.Fill(dataTable);
+
+            if (dataTable.Rows.Count >= 1)
+            {
+                guna2Button2.Visible = true;
+            }
+
 
             //imagem de Perfil
             try
@@ -125,7 +117,7 @@ namespace Help4U
             da.Fill(dt);
            
             label1.Text = dt.Rows[0][3].ToString();
-            byte[] img = (byte[])dt.Rows[0][14];
+            byte[] img = (byte[])dt.Rows[0][16];
             MemoryStream ms = new MemoryStream(img);
             guna2CirclePictureBox2.Image = Image.FromStream(ms);
             da.Dispose();
@@ -133,8 +125,24 @@ namespace Help4U
             }
             catch (Exception ex)
             {  // Show any error message.
-                MessageBox.Show(ex.Message);}
+                MessageBox.Show(ex.Message);
+            }
 
+        }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2ControlBox2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

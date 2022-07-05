@@ -160,6 +160,11 @@ namespace Help4U
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+          
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
             System.Diagnostics.Process.Start("http://127.0.0.1:5501/public/Register.html");
         }
     }
