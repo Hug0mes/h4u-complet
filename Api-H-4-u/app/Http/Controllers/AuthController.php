@@ -36,6 +36,7 @@ class AuthController extends Controller
             $user->Genero = $request->input('Genero');
             /*$plainPassword */  $user->Password = $request->input('Password');
             $user->Morada = $request->input('Morada');
+            $user->Codigo_Postal = $request->input('Codigo_Postal');
             $user->Estado = $request->input('Estado');
             $user->Interesses = $request->input('Interesses');
             //$user->Password = app('hash')->make($plainPassword);

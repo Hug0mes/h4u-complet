@@ -10,9 +10,9 @@ function register() {
 	var Genero = document.getElementById("Genero").value;
 	var Regiao = document.getElementById("Regiao").value;
 	var Morada = document.getElementById("Morada").value;
-	var Estado = document.getElementById("Morada").value;
-
-var Estado = "inativo" ;    
+    var Cod_Postal = document.getElementById("Cod_Postal").value;
+    var Estado = document.getElementById("Morada").value;
+    var Estado = "inativo" ;    
 
 
     if (Password == Rpassword) {
@@ -30,8 +30,8 @@ var Estado = "inativo" ;
                 Genero: Genero,
                 Regiao: Regiao,
                 Morada: Morada,
+                Codigo_Postal: Cod_Postal,
                 Estado:Estado
-
             })
         }).then(res => res.json())
             .then(res => checkRegister(res));

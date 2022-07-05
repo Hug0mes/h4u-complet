@@ -24,7 +24,9 @@ class CreateUserTable extends Migration
             $table->string('Adm',)->nullable();
             $table->string('Estado',50)->nullable();
             $table->string('Morada',50);
+            $table->string('Codigo_Postal',50);
             $table->string('Interesses',50)->nullable();
+            $table->string('Descricao',200)->nullable();
             $table->timestamps();
         }); 
     }

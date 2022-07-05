@@ -34,15 +34,15 @@
           <i class="fas fa-envelope"></i>
           <select name="Genero" id="Genero">
             <option></option>
-            <option value="Masculino">maculino</option>
-            <option value="Femenino">feminino</option>
+            <option value="Masculino">Maculino</option>
+            <option value="Femenino">Feminino</option>
             <option value="Outro">Outro...</option>
           </select>
         </div>
 
         <div class="group">
           <label>Data de Nascimento</label>
-          <i class="fas fa-envelope"></i><input type="date" id="Dtn" placeholder="Nome" />
+          <i class="fas fa-envelope"></i><input type="date" id="Dtn" max= "2004-07-13" min="1922-07-13" placeholder="Nome" />
         </div>
 
         <div class="group">
@@ -77,6 +77,11 @@
         </div>
 
         <div class="group">
+          <label> Código Postal</label>
+          <i class="fas fa-envelope"></i><input type="text" inputmode="numeric"  id="Cod_Postal" placeholder="1111222"  maxlength="7" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+        </div>
+
+        <div class="group">
           <label>Password</label>
           <i class="fas fa-unlock-alt"></i><input type="password" id="Password" placeholder="Password" />
         </div>
@@ -87,11 +92,11 @@
  Password" />
         </div>
 
-        <div class="radio">
+   <!--  <div class="radio">
           <input type="radio" />
           <label>Eu concordo com os termos e condições</label>
         </div>
-
+-->  
         <input type="button" onclick="register()" value="Sign in" />
 
         <p>
