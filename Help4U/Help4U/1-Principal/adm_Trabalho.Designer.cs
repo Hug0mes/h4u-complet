@@ -40,7 +40,7 @@
             this.guna2Button16.Animated = true;
             this.guna2Button16.AutoRoundedCorners = true;
             this.guna2Button16.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button16.BorderRadius = 29;
+            this.guna2Button16.BorderRadius = 24;
             this.guna2Button16.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button16.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button16.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -52,9 +52,10 @@
             this.guna2Button16.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(100)))), ((int)(((byte)(110)))));
             this.guna2Button16.HoverState.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Button16.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button16.Location = new System.Drawing.Point(46, 22);
+            this.guna2Button16.Location = new System.Drawing.Point(34, 18);
+            this.guna2Button16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Button16.Name = "guna2Button16";
-            this.guna2Button16.Size = new System.Drawing.Size(226, 61);
+            this.guna2Button16.Size = new System.Drawing.Size(170, 50);
             this.guna2Button16.TabIndex = 20;
             this.guna2Button16.Text = "Adicionar";
             this.guna2Button16.UseTransparentBackground = true;
@@ -64,7 +65,7 @@
             this.guna2Button1.Animated = true;
             this.guna2Button1.AutoRoundedCorners = true;
             this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 29;
+            this.guna2Button1.BorderRadius = 24;
             this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -76,9 +77,10 @@
             this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(100)))), ((int)(((byte)(110)))));
             this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.Location = new System.Drawing.Point(450, 22);
+            this.guna2Button1.Location = new System.Drawing.Point(338, 18);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(226, 61);
+            this.guna2Button1.Size = new System.Drawing.Size(170, 50);
             this.guna2Button1.TabIndex = 21;
             this.guna2Button1.Text = "Editar";
             this.guna2Button1.UseTransparentBackground = true;
@@ -88,7 +90,7 @@
             this.guna2Button2.Animated = true;
             this.guna2Button2.AutoRoundedCorners = true;
             this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.BorderRadius = 29;
+            this.guna2Button2.BorderRadius = 24;
             this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -100,9 +102,10 @@
             this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(100)))), ((int)(((byte)(110)))));
             this.guna2Button2.HoverState.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button2.Location = new System.Drawing.Point(809, 22);
+            this.guna2Button2.Location = new System.Drawing.Point(607, 18);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(226, 61);
+            this.guna2Button2.Size = new System.Drawing.Size(170, 50);
             this.guna2Button2.TabIndex = 22;
             this.guna2Button2.Text = "Remover";
             this.guna2Button2.UseTransparentBackground = true;
@@ -112,30 +115,33 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(100)))), ((int)(((byte)(110)))));
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1069, 94);
+            this.label1.Size = new System.Drawing.Size(802, 76);
             this.label1.TabIndex = 23;
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(3, 89);
+            this.panel1.Location = new System.Drawing.Point(2, 72);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1066, 680);
+            this.panel1.Size = new System.Drawing.Size(800, 552);
             this.panel1.TabIndex = 24;
             // 
             // adm_Trabalho
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1069, 769);
+            this.ClientSize = new System.Drawing.Size(802, 625);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2Button16);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "adm_Trabalho";
-            this.Text = "adm_Trabalho";
+            this.Text = " ";
             this.ResumeLayout(false);
 
         }

@@ -68,6 +68,18 @@
     <Compile Include="1-Principal\adm_Trabalho.Designer.cs">
       <DependentUpon>adm_Trabalho.cs</DependentUpon>
     </Compile>
+    <Compile Include="3-Mais Trabalhos\InfoTrabalho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3-Mais Trabalhos\InfoTrabalho.Designer.cs">
+      <DependentUpon>InfoTrabalho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PedidosHistorico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PedidosHistorico.Designer.cs">
+      <DependentUpon>PedidosHistorico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pedidos\PedidoUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +175,9 @@
     <EmbeddedResource Include="2-Trabalhos\1-trabalho.resx">
       <DependentUpon>1-trabalho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="3-Mais Trabalhos\InfoTrabalho.resx">
+      <DependentUpon>InfoTrabalho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="3-Mais Trabalhos\maisTrabalho.resx">
       <DependentUpon>maisTrabalho.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PedidosHistorico.resx">
+      <DependentUpon>PedidosHistorico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pedidos\PedidoUser.resx">
       <DependentUpon>PedidoUser.cs</DependentUpon>
@@ -285,6 +303,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mais2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Denuncia.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

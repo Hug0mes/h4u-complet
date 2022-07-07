@@ -39,11 +39,11 @@
             this.tecnologiaEProgramaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trabalhosManuaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trabalhosManuaisToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.guna2Button18 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.guna2Button18 = new Guna.UI2.WinForms.Guna2Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -138,30 +138,6 @@
             this.trabalhosManuaisToolStripMenuItem1.Size = new System.Drawing.Size(124, 21);
             this.trabalhosManuaisToolStripMenuItem1.Text = "Trabalhos Manuais";
             // 
-            // guna2Button18
-            // 
-            this.guna2Button18.Animated = true;
-            this.guna2Button18.AutoRoundedCorners = true;
-            this.guna2Button18.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.guna2Button18.BorderRadius = 11;
-            this.guna2Button18.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button18.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button18.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button18.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button18.FillColor = System.Drawing.Color.White;
-            this.guna2Button18.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button18.ForeColor = System.Drawing.Color.Transparent;
-            this.guna2Button18.HoverState.BorderColor = System.Drawing.Color.White;
-            this.guna2Button18.HoverState.FillColor = System.Drawing.Color.White;
-            this.guna2Button18.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button18.Image")));
-            this.guna2Button18.Location = new System.Drawing.Point(613, 34);
-            this.guna2Button18.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2Button18.Name = "guna2Button18";
-            this.guna2Button18.Size = new System.Drawing.Size(26, 25);
-            this.guna2Button18.TabIndex = 20;
-            this.guna2Button18.UseTransparentBackground = true;
-            // 
             // guna2TextBox1
             // 
             this.guna2TextBox1.Animated = true;
@@ -205,6 +181,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(794, 551);
             this.panel1.TabIndex = 21;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // listView1
             // 
@@ -216,6 +193,32 @@
             this.listView1.Size = new System.Drawing.Size(679, 515);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.listView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseClick);
+            // 
+            // guna2Button18
+            // 
+            this.guna2Button18.Animated = true;
+            this.guna2Button18.AutoRoundedCorners = true;
+            this.guna2Button18.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.guna2Button18.BorderRadius = 11;
+            this.guna2Button18.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button18.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button18.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button18.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button18.FillColor = System.Drawing.Color.White;
+            this.guna2Button18.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button18.ForeColor = System.Drawing.Color.Transparent;
+            this.guna2Button18.HoverState.BorderColor = System.Drawing.Color.White;
+            this.guna2Button18.HoverState.FillColor = System.Drawing.Color.White;
+            this.guna2Button18.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button18.Image")));
+            this.guna2Button18.Location = new System.Drawing.Point(613, 34);
+            this.guna2Button18.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button18.Name = "guna2Button18";
+            this.guna2Button18.Size = new System.Drawing.Size(26, 25);
+            this.guna2Button18.TabIndex = 20;
+            this.guna2Button18.UseTransparentBackground = true;
             // 
             // trabalho
             // 

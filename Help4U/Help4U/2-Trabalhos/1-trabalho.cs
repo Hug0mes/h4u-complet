@@ -20,6 +20,7 @@ namespace Help4U
             InitializeComponent();
         }
 
+        public static string selectwork;
         public void loadform(object Form)
         {
             if (this.panel1.Controls.Count > 0)
@@ -42,10 +43,8 @@ namespace Help4U
 
         private void trabalho_Load(object sender, EventArgs e)
         {
-
-
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
-            string query = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1;";
+            string query = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado = 'Ativo' ;";
 
             MySqlDataAdapter sda = new MySqlDataAdapter(query, connectionString);
             DataTable dt = new DataTable();
@@ -66,7 +65,7 @@ namespace Help4U
                 listView1.LargeImageList.ImageSize = new System.Drawing.Size(110, 110);
 
 
-                byte[] imagebyte = (byte[])(row[10]);
+                byte[] imagebyte = (byte[])(row[13]);
 
                 MemoryStream image_stream = new MemoryStream(imagebyte);
 
@@ -80,15 +79,18 @@ namespace Help4U
 
                 item.ImageIndex = i;
 
-                item.Text = row["Titulo"].ToString();
-                item.Text = row["Localização"].ToString();
 
-                    i += 1;
+                item.Text = row["Titulo"].ToString() + "\r\n" + row["Localização"].ToString();
+                item.SubItems.Add(row["IdTrabalho"].ToString());
 
-                this.listView1.Items.Add(item);
 
-            }
-            catch (Exception ex)
+                i += 1;
+                    
+                    this.listView1.Items.Add(item);
+
+
+                }
+                catch (Exception ex)
             {
                 // Show any error message.
                 MessageBox.Show(ex.Message);
@@ -97,6 +99,21 @@ namespace Help4U
         }
     }
 
-       
+        private void listView1_MouseClick(object sender, MouseEventArgs e)
+        {
+           InfoTrabalho ti = new InfoTrabalho();
+          selectwork = listView1.SelectedItems[0].SubItems[1].Text;
+          ti.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

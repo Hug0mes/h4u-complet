@@ -96,7 +96,7 @@ namespace Help4U
                 item.Text = row["Nome"].ToString();
                 item.SubItems.Add(row["Id"].ToString());
 
-                             i += 1;
+                    i += 1;
 
                 this.listView1.Items.Add(item);
 
@@ -125,10 +125,16 @@ namespace Help4U
 
         private void listView1_MouseClick(object sender, MouseEventArgs e)
         {
+       
             selectUser = listView1.SelectedItems[0].SubItems[1].Text;
             outroPerfil op = new outroPerfil();
             op.Show();
-         
+
+        }
+
+        private void listView1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

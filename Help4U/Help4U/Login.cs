@@ -46,7 +46,7 @@ namespace Help4U
         //Abrir Principal
         private void guna2Button4_Click_1(object sender, EventArgs e)
         {
-            if (guna2TextBox1.Text.Length == 0 | guna2TextBox2.Text.Length == 0)
+            if (guna2TextBox1.Text.Length == 0 || guna2TextBox2.Text.Length == 0)
             {
 
                 label1.Visible = true;

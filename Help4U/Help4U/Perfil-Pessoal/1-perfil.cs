@@ -59,5 +59,11 @@ namespace Help4U
             this.Close();
         }
 
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Principal principal = new Principal();
+            principal.Show();
+            this.Close();
+        }
     }
 }

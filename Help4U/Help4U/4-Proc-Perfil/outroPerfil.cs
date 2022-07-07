@@ -77,6 +77,11 @@ namespace Help4U
         {
 
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+              
+        }
     }
     }
 
