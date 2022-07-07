@@ -154,5 +154,10 @@ namespace Help4U
         {
             loadform(new PedidosHistorico());
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            loadform(new adm_Trabalho());
+        }
     }
 }

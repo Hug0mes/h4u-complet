@@ -74,11 +74,11 @@
     <Compile Include="3-Mais Trabalhos\InfoTrabalho.Designer.cs">
       <DependentUpon>InfoTrabalho.cs</DependentUpon>
     </Compile>
-    <Compile Include="PedidosHistorico.cs">
+    <Compile Include="2-Trabalhos\Trabalhos Historico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PedidosHistorico.Designer.cs">
-      <DependentUpon>PedidosHistorico.cs</DependentUpon>
+    <Compile Include="2-Trabalhos\Trabalhos Historico.Designer.cs">
+      <DependentUpon>Trabalhos Historico.cs</DependentUpon>
     </Compile>
     <Compile Include="Pedidos\PedidoUser.cs">
       <SubType>Form</SubType>
@@ -193,8 +193,8 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PedidosHistorico.resx">
-      <DependentUpon>PedidosHistorico.cs</DependentUpon>
+    <EmbeddedResource Include="2-Trabalhos\Trabalhos Historico.resx">
+      <DependentUpon>Trabalhos Historico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pedidos\PedidoUser.resx">
       <DependentUpon>PedidoUser.cs</DependentUpon>
