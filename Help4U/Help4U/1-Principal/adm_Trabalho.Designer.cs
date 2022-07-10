@@ -55,7 +55,7 @@
             this.guna2Button16.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(100)))), ((int)(((byte)(110)))));
             this.guna2Button16.HoverState.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Button16.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button16.Location = new System.Drawing.Point(58, 526);
+            this.guna2Button16.Location = new System.Drawing.Point(58, 479);
             this.guna2Button16.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button16.Name = "guna2Button16";
             this.guna2Button16.Size = new System.Drawing.Size(129, 50);
@@ -80,7 +80,7 @@
             this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(100)))), ((int)(((byte)(110)))));
             this.guna2Button2.HoverState.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button2.Location = new System.Drawing.Point(551, 526);
+            this.guna2Button2.Location = new System.Drawing.Point(551, 479);
             this.guna2Button2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(170, 50);
@@ -91,7 +91,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(58, 171);
+            this.dataGridView1.Location = new System.Drawing.Point(58, 121);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(663, 333);
             this.dataGridView1.TabIndex = 23;
@@ -113,7 +113,7 @@
             this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(100)))), ((int)(((byte)(110)))));
             this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.Location = new System.Drawing.Point(58, 17);
+            this.guna2Button1.Location = new System.Drawing.Point(58, 38);
             this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(134, 35);
@@ -138,7 +138,7 @@
             this.guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(100)))), ((int)(((byte)(110)))));
             this.guna2Button3.HoverState.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button3.Location = new System.Drawing.Point(233, 17);
+            this.guna2Button3.Location = new System.Drawing.Point(233, 38);
             this.guna2Button3.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(139, 35);
@@ -163,7 +163,7 @@
             this.guna2Button4.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(100)))), ((int)(((byte)(110)))));
             this.guna2Button4.HoverState.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Button4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button4.Location = new System.Drawing.Point(403, 17);
+            this.guna2Button4.Location = new System.Drawing.Point(403, 38);
             this.guna2Button4.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Size = new System.Drawing.Size(139, 35);
@@ -188,7 +188,7 @@
             this.guna2Button5.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(100)))), ((int)(((byte)(110)))));
             this.guna2Button5.HoverState.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Button5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button5.Location = new System.Drawing.Point(582, 17);
+            this.guna2Button5.Location = new System.Drawing.Point(582, 38);
             this.guna2Button5.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.Size = new System.Drawing.Size(139, 35);

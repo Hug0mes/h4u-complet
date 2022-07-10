@@ -100,9 +100,6 @@ namespace Help4U
             {
 
 
-
-
-
                 //Guardar informação do trabalho
                 string query = "INSERT INTO trabalho(`IdTrabalho`, `IdUser`, `Titulo`, `Data`, `Localização` , `Rua`, `Cod_postal`, `Tipo`, `Preço`, `Estado`, `Descricao`) VALUES (NULL, '" + Login.idlocal + "', '" + textBox1.Text + "', '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + comboBox1.GetItemText(comboBox1.SelectedItem) + "','" + textBox3.Text + "','" + maskedTextBox1.Text + "','" + comboBox2.GetItemText(comboBox2.SelectedItem) + "', '" + textBox2.Text + "', 'Ativo' , '" + textBox6.Text + "')";
 

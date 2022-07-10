@@ -76,13 +76,17 @@ namespace Help4U
 
                 if (dataTable1.Rows.Count < 1)
                 {
+           
+                    
 
-                    string query2 = "INSERT INTO userfotos(`IdUsers`, `Foto`) VALUES ('" + idlocal + "', LOAD_FILE('C:/Users/2005h/Downloads/Lixo/imagens/default.jpg') )";
+                    string query2 = "INSERT INTO userfotos(`IdUsers`, `Foto`) VALUES ('" + idlocal + "', LOAD_FILE('C:/Users/2005h/Desktop/Git_Projects/h4u-complet/Help4U/Help4U/Resources/user.png') )";
 
                     MySqlConnection databaseConnection = new MySqlConnection(connectionString);
                     MySqlCommand commandDatabase = new MySqlCommand(query2, databaseConnection);
                     commandDatabase.CommandTimeout = 60;
                     
+                 
+
                     try
                     {
                         databaseConnection.Open();

@@ -56,54 +56,55 @@ namespace Help4U
 
             foreach (DataRow row in dt.Rows)
             {
-                try 
-                { 
+                try
+                {
 
-                images.ColorDepth = ColorDepth.Depth32Bit;
+                    images.ColorDepth = ColorDepth.Depth32Bit;
 
-                listView1.LargeImageList = images;
-                listView1.LargeImageList.ImageSize = new System.Drawing.Size(110, 110);
-
-
-                byte[] imagebyte = (byte[])(row[13]);
-
-                MemoryStream image_stream = new MemoryStream(imagebyte);
-
-                image_stream.Write(imagebyte, 0, imagebyte.Length);
-
-                images.Images.Add(row[2].ToString(), new Bitmap(image_stream));
-
-                image_stream.Close();
-
-                ListViewItem item = new ListViewItem();
-
-                item.ImageIndex = i;
+                    listView1.LargeImageList = images;
+                    listView1.LargeImageList.ImageSize = new System.Drawing.Size(110, 110);
 
 
-                item.Text = row["Titulo"].ToString() + "\r\n" + row["Localização"].ToString();
-                item.SubItems.Add(row["IdTrabalho"].ToString());
+                    byte[] imagebyte = (byte[])(row[13]);
+
+                    MemoryStream image_stream = new MemoryStream(imagebyte);
+
+                    image_stream.Write(imagebyte, 0, imagebyte.Length);
+
+                    images.Images.Add(row[2].ToString(), new Bitmap(image_stream));
+
+                    image_stream.Close();
+
+                    ListViewItem item = new ListViewItem();
+
+                    item.ImageIndex = i;
 
 
-                i += 1;
-                    
+                    item.Text = row["Titulo"].ToString() + "\r\n \r\n" + row["Localização"].ToString();
+                    item.SubItems.Add(row["IdTrabalho"].ToString());
+
+
+                    i += 1;
+
                     this.listView1.Items.Add(item);
 
 
                 }
                 catch (Exception ex)
-            {
-                // Show any error message.
-                MessageBox.Show(ex.Message);
-            }
+                {
+                    // Show any error message.
+                    MessageBox.Show(ex.Message);
+                }
+               
 
+            }
         }
-    }
 
         private void listView1_MouseClick(object sender, MouseEventArgs e)
         {
-           InfoTrabalho ti = new InfoTrabalho();
-          selectwork = listView1.SelectedItems[0].SubItems[1].Text;
-          ti.Show();
+            InfoTrabalho ti = new InfoTrabalho();
+            selectwork = listView1.SelectedItems[0].SubItems[1].Text;
+            ti.Show();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -114,6 +115,586 @@ namespace Help4U
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void construçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView1.Clear();
+
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
+            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado = 'Ativo' and Tipo = 'construção' ;";
+
+            MySqlDataAdapter sda = new MySqlDataAdapter(query1, connectionString);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            int i = 0;
+
+            ImageList images = new ImageList();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                try
+                {
+
+                    images.ColorDepth = ColorDepth.Depth32Bit;
+
+                    listView1.LargeImageList = images;
+                    listView1.LargeImageList.ImageSize = new System.Drawing.Size(110, 110);
+
+
+                    byte[] imagebyte = (byte[])(row[13]);
+
+                    MemoryStream image_stream = new MemoryStream(imagebyte);
+
+                    image_stream.Write(imagebyte, 0, imagebyte.Length);
+
+                    images.Images.Add(row[2].ToString(), new Bitmap(image_stream));
+
+                    image_stream.Close();
+
+                    ListViewItem item = new ListViewItem();
+
+                    item.ImageIndex = i;
+
+
+                    item.Text = row["Titulo"].ToString() + "\r\n \r\n" + row["Localização"].ToString();
+                    item.SubItems.Add(row["IdTrabalho"].ToString());
+
+                    i += 1;
+
+                    this.listView1.Items.Add(item);
+                }
+                catch (Exception ex)
+                {
+                    // Show any error message.
+                    MessageBox.Show(ex.Message);
+                }
+
+
+            }
+        }
+
+        private void designToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView1.Clear();
+
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
+            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado = 'Ativo' and Tipo = 'design' ;";
+
+            MySqlDataAdapter sda = new MySqlDataAdapter(query1, connectionString);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            int i = 0;
+
+            ImageList images = new ImageList();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                try
+                {
+
+                    images.ColorDepth = ColorDepth.Depth32Bit;
+
+                    listView1.LargeImageList = images;
+                    listView1.LargeImageList.ImageSize = new System.Drawing.Size(110, 110);
+
+
+                    byte[] imagebyte = (byte[])(row[13]);
+
+                    MemoryStream image_stream = new MemoryStream(imagebyte);
+
+                    image_stream.Write(imagebyte, 0, imagebyte.Length);
+
+                    images.Images.Add(row[2].ToString(), new Bitmap(image_stream));
+
+                    image_stream.Close();
+
+                    ListViewItem item = new ListViewItem();
+
+                    item.ImageIndex = i;
+
+
+                    item.Text = row["Titulo"].ToString() + "\r\n \r\n" + row["Localização"].ToString();
+                    item.SubItems.Add(row["IdTrabalho"].ToString());
+
+                    i += 1;
+
+                    this.listView1.Items.Add(item);
+                }
+                catch (Exception ex)
+                {
+                    // Show any error message.
+                    MessageBox.Show(ex.Message);
+                }
+
+
+            }
+        }
+
+        private void escritaETraduçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView1.Clear();
+
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
+            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado = 'Ativo' and Tipo = 'Escrita e tradução' ;";
+
+            MySqlDataAdapter sda = new MySqlDataAdapter(query1, connectionString);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            int i = 0;
+
+            ImageList images = new ImageList();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                try
+                {
+
+                    images.ColorDepth = ColorDepth.Depth32Bit;
+
+                    listView1.LargeImageList = images;
+                    listView1.LargeImageList.ImageSize = new System.Drawing.Size(110, 110);
+
+
+                    byte[] imagebyte = (byte[])(row[13]);
+
+                    MemoryStream image_stream = new MemoryStream(imagebyte);
+
+                    image_stream.Write(imagebyte, 0, imagebyte.Length);
+
+                    images.Images.Add(row[2].ToString(), new Bitmap(image_stream));
+
+                    image_stream.Close();
+
+                    ListViewItem item = new ListViewItem();
+
+                    item.ImageIndex = i;
+
+
+                    item.Text = row["Titulo"].ToString() + "\r\n \r\n" + row["Localização"].ToString();
+                    item.SubItems.Add(row["IdTrabalho"].ToString());
+
+                    i += 1;
+
+                    this.listView1.Items.Add(item);
+                }
+                catch (Exception ex)
+                {
+                    // Show any error message.
+                    MessageBox.Show(ex.Message);
+                }
+
+
+            }
+        }
+
+        private void estiloDeVidaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView1.Clear();
+
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
+            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado = 'Ativo' and Tipo = 'Estilo de Vida' ;";
+
+            MySqlDataAdapter sda = new MySqlDataAdapter(query1, connectionString);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            int i = 0;
+
+            ImageList images = new ImageList();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                try
+                {
+
+                    images.ColorDepth = ColorDepth.Depth32Bit;
+
+                    listView1.LargeImageList = images;
+                    listView1.LargeImageList.ImageSize = new System.Drawing.Size(110, 110);
+
+
+                    byte[] imagebyte = (byte[])(row[13]);
+
+                    MemoryStream image_stream = new MemoryStream(imagebyte);
+
+                    image_stream.Write(imagebyte, 0, imagebyte.Length);
+
+                    images.Images.Add(row[2].ToString(), new Bitmap(image_stream));
+
+                    image_stream.Close();
+
+                    ListViewItem item = new ListViewItem();
+
+                    item.ImageIndex = i;
+
+
+                    item.Text = row["Titulo"].ToString() + "\r\n \r\n" + row["Localização"].ToString();
+                    item.SubItems.Add(row["IdTrabalho"].ToString());
+
+                    i += 1;
+
+                    this.listView1.Items.Add(item);
+                }
+                catch (Exception ex)
+                {
+                    // Show any error message.
+                    MessageBox.Show(ex.Message);
+                }
+
+
+            }
+        }
+
+        private void marketingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView1.Clear();
+
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
+            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado = 'Ativo' and Tipo = 'Marketing' ;";
+
+            MySqlDataAdapter sda = new MySqlDataAdapter(query1, connectionString);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            int i = 0;
+
+            ImageList images = new ImageList();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                try
+                {
+
+                    images.ColorDepth = ColorDepth.Depth32Bit;
+
+                    listView1.LargeImageList = images;
+                    listView1.LargeImageList.ImageSize = new System.Drawing.Size(110, 110);
+
+
+                    byte[] imagebyte = (byte[])(row[13]);
+
+                    MemoryStream image_stream = new MemoryStream(imagebyte);
+
+                    image_stream.Write(imagebyte, 0, imagebyte.Length);
+
+                    images.Images.Add(row[2].ToString(), new Bitmap(image_stream));
+
+                    image_stream.Close();
+
+                    ListViewItem item = new ListViewItem();
+
+                    item.ImageIndex = i;
+
+
+                    item.Text = row["Titulo"].ToString() + "\r\n \r\n" + row["Localização"].ToString();
+                    item.SubItems.Add(row["IdTrabalho"].ToString());
+
+                    i += 1;
+
+                    this.listView1.Items.Add(item);
+                }
+                catch (Exception ex)
+                {
+                    // Show any error message.
+                    MessageBox.Show(ex.Message);
+                }
+
+
+            }
+        }
+
+        private void negóciosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView1.Clear();
+
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
+            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado = 'Ativo' and Tipo = 'Animação e vídeo' or Tipo = 'Áudio e musica' ;";
+
+            MySqlDataAdapter sda = new MySqlDataAdapter(query1, connectionString);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            int i = 0;
+
+            ImageList images = new ImageList();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                try
+                {
+
+                    images.ColorDepth = ColorDepth.Depth32Bit;
+
+                    listView1.LargeImageList = images;
+                    listView1.LargeImageList.ImageSize = new System.Drawing.Size(110, 110);
+
+
+                    byte[] imagebyte = (byte[])(row[13]);
+
+                    MemoryStream image_stream = new MemoryStream(imagebyte);
+
+                    image_stream.Write(imagebyte, 0, imagebyte.Length);
+
+                    images.Images.Add(row[2].ToString(), new Bitmap(image_stream));
+
+                    image_stream.Close();
+
+                    ListViewItem item = new ListViewItem();
+
+                    item.ImageIndex = i;
+
+
+                    item.Text = row["Titulo"].ToString() + "\r\n \r\n" + row["Localização"].ToString();
+                    item.SubItems.Add(row["IdTrabalho"].ToString());
+
+                    i += 1;
+
+                    this.listView1.Items.Add(item);
+                }
+                catch (Exception ex)
+                {
+                    // Show any error message.
+                    MessageBox.Show(ex.Message);
+                }
+
+
+            }
+        }
+
+        private void tecnologiaEProgramaçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView1.Clear();
+
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
+            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado = 'Ativo' and Tipo = 'Negocios' ;";
+
+            MySqlDataAdapter sda = new MySqlDataAdapter(query1, connectionString);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            int i = 0;
+
+            ImageList images = new ImageList();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                try
+                {
+
+                    images.ColorDepth = ColorDepth.Depth32Bit;
+
+                    listView1.LargeImageList = images;
+                    listView1.LargeImageList.ImageSize = new System.Drawing.Size(110, 110);
+
+
+                    byte[] imagebyte = (byte[])(row[13]);
+
+                    MemoryStream image_stream = new MemoryStream(imagebyte);
+
+                    image_stream.Write(imagebyte, 0, imagebyte.Length);
+
+                    images.Images.Add(row[2].ToString(), new Bitmap(image_stream));
+
+                    image_stream.Close();
+
+                    ListViewItem item = new ListViewItem();
+
+                    item.ImageIndex = i;
+
+
+                    item.Text = row["Titulo"].ToString() + "\r\n \r\n" + row["Localização"].ToString();
+                    item.SubItems.Add(row["IdTrabalho"].ToString());
+
+                    i += 1;
+
+                    this.listView1.Items.Add(item);
+                }
+                catch (Exception ex)
+                {
+                    // Show any error message.
+                    MessageBox.Show(ex.Message);
+                }
+
+
+            }
+        }
+
+        private void trabalhosManuaisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView1.Clear();
+
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
+            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado = 'Ativo' and Tipo = 'Tecnologia e Programação' ;";
+
+            MySqlDataAdapter sda = new MySqlDataAdapter(query1, connectionString);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            int i = 0;
+
+            ImageList images = new ImageList();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                try
+                {
+
+                    images.ColorDepth = ColorDepth.Depth32Bit;
+
+                    listView1.LargeImageList = images;
+                    listView1.LargeImageList.ImageSize = new System.Drawing.Size(110, 110);
+
+
+                    byte[] imagebyte = (byte[])(row[13]);
+
+                    MemoryStream image_stream = new MemoryStream(imagebyte);
+
+                    image_stream.Write(imagebyte, 0, imagebyte.Length);
+
+                    images.Images.Add(row[2].ToString(), new Bitmap(image_stream));
+
+                    image_stream.Close();
+
+                    ListViewItem item = new ListViewItem();
+
+                    item.ImageIndex = i;
+
+
+                    item.Text = row["Titulo"].ToString() + "\r\n \r\n" + row["Localização"].ToString();
+                    item.SubItems.Add(row["IdTrabalho"].ToString());
+
+                    i += 1;
+
+                    this.listView1.Items.Add(item);
+                }
+                catch (Exception ex)
+                {
+                    // Show any error message.
+                    MessageBox.Show(ex.Message);
+                }
+
+
+            }
+        }
+
+        private void trabalhosManuaisToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            listView1.Clear();
+
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
+            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado = 'Ativo' and Tipo = 'Trabalhos Manuais' ;";
+
+            MySqlDataAdapter sda = new MySqlDataAdapter(query1, connectionString);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            int i = 0;
+
+            ImageList images = new ImageList();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                try
+                {
+
+                    images.ColorDepth = ColorDepth.Depth32Bit;
+
+                    listView1.LargeImageList = images;
+                    listView1.LargeImageList.ImageSize = new System.Drawing.Size(110, 110);
+
+
+                    byte[] imagebyte = (byte[])(row[13]);
+
+                    MemoryStream image_stream = new MemoryStream(imagebyte);
+
+                    image_stream.Write(imagebyte, 0, imagebyte.Length);
+
+                    images.Images.Add(row[2].ToString(), new Bitmap(image_stream));
+
+                    image_stream.Close();
+
+                    ListViewItem item = new ListViewItem();
+
+                    item.ImageIndex = i;
+
+
+                    item.Text = row["Titulo"].ToString() + "\r\n \r\n" + row["Localização"].ToString();
+                    item.SubItems.Add(row["IdTrabalho"].ToString());
+
+                    i += 1;
+
+                    this.listView1.Items.Add(item);
+                }
+                catch (Exception ex)
+                {
+                    // Show any error message.
+                    MessageBox.Show(ex.Message);
+                }
+
+
+            }
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            listView1.Clear();
+
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
+            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado = 'Ativo' and Titulo like '%"+ guna2TextBox1.Text +"%' ;";
+
+            MySqlDataAdapter sda = new MySqlDataAdapter(query1, connectionString);
+            DataTable dt = new DataTable();
+            sda.Fill(dt); 
+
+            int i = 0;
+
+            ImageList images = new ImageList();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                try
+                {
+
+                    images.ColorDepth = ColorDepth.Depth32Bit;
+
+                    listView1.LargeImageList = images;
+                    listView1.LargeImageList.ImageSize = new System.Drawing.Size(110, 110);
+
+
+                    byte[] imagebyte = (byte[])(row[13]);
+
+                    MemoryStream image_stream = new MemoryStream(imagebyte);
+
+                    image_stream.Write(imagebyte, 0, imagebyte.Length);
+
+                    images.Images.Add(row[2].ToString(), new Bitmap(image_stream));
+
+                    image_stream.Close();
+
+                    ListViewItem item = new ListViewItem();
+
+                    item.ImageIndex = i;
+
+
+                    item.Text = row["Titulo"].ToString() + "\r\n \r\n" + row["Localização"].ToString();
+                    item.SubItems.Add(row["IdTrabalho"].ToString());
+
+                    i += 1;
+
+                    this.listView1.Items.Add(item);
+                }
+                catch (Exception ex)
+                {
+                    // Show any error message.
+                    MessageBox.Show(ex.Message);
+                }
+
+
+            }
         }
     }
 }

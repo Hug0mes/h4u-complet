@@ -80,6 +80,7 @@
             this.construçãoToolStripMenuItem.Name = "construçãoToolStripMenuItem";
             this.construçãoToolStripMenuItem.Size = new System.Drawing.Size(91, 21);
             this.construçãoToolStripMenuItem.Text = "Construção";
+            this.construçãoToolStripMenuItem.Click += new System.EventHandler(this.construçãoToolStripMenuItem_Click);
             // 
             // designToolStripMenuItem
             // 
@@ -87,6 +88,7 @@
             this.designToolStripMenuItem.Name = "designToolStripMenuItem";
             this.designToolStripMenuItem.Size = new System.Drawing.Size(62, 21);
             this.designToolStripMenuItem.Text = "Design ";
+            this.designToolStripMenuItem.Click += new System.EventHandler(this.designToolStripMenuItem_Click);
             // 
             // escritaETraduçãoToolStripMenuItem
             // 
@@ -94,6 +96,7 @@
             this.escritaETraduçãoToolStripMenuItem.Name = "escritaETraduçãoToolStripMenuItem";
             this.escritaETraduçãoToolStripMenuItem.Size = new System.Drawing.Size(122, 21);
             this.escritaETraduçãoToolStripMenuItem.Text = "Escrita e tradução";
+            this.escritaETraduçãoToolStripMenuItem.Click += new System.EventHandler(this.escritaETraduçãoToolStripMenuItem_Click);
             // 
             // estiloDeVidaToolStripMenuItem
             // 
@@ -101,6 +104,7 @@
             this.estiloDeVidaToolStripMenuItem.Name = "estiloDeVidaToolStripMenuItem";
             this.estiloDeVidaToolStripMenuItem.Size = new System.Drawing.Size(96, 21);
             this.estiloDeVidaToolStripMenuItem.Text = "Estilo de Vida";
+            this.estiloDeVidaToolStripMenuItem.Click += new System.EventHandler(this.estiloDeVidaToolStripMenuItem_Click);
             // 
             // marketingToolStripMenuItem
             // 
@@ -108,6 +112,7 @@
             this.marketingToolStripMenuItem.Name = "marketingToolStripMenuItem";
             this.marketingToolStripMenuItem.Size = new System.Drawing.Size(75, 21);
             this.marketingToolStripMenuItem.Text = "Marketing";
+            this.marketingToolStripMenuItem.Click += new System.EventHandler(this.marketingToolStripMenuItem_Click);
             // 
             // negóciosToolStripMenuItem
             // 
@@ -115,6 +120,7 @@
             this.negóciosToolStripMenuItem.Name = "negóciosToolStripMenuItem";
             this.negóciosToolStripMenuItem.Size = new System.Drawing.Size(76, 21);
             this.negóciosToolStripMenuItem.Text = "Multimídia";
+            this.negóciosToolStripMenuItem.Click += new System.EventHandler(this.negóciosToolStripMenuItem_Click);
             // 
             // tecnologiaEProgramaçãoToolStripMenuItem
             // 
@@ -122,6 +128,7 @@
             this.tecnologiaEProgramaçãoToolStripMenuItem.Name = "tecnologiaEProgramaçãoToolStripMenuItem";
             this.tecnologiaEProgramaçãoToolStripMenuItem.Size = new System.Drawing.Size(70, 21);
             this.tecnologiaEProgramaçãoToolStripMenuItem.Text = "Negócios";
+            this.tecnologiaEProgramaçãoToolStripMenuItem.Click += new System.EventHandler(this.tecnologiaEProgramaçãoToolStripMenuItem_Click);
             // 
             // trabalhosManuaisToolStripMenuItem
             // 
@@ -130,6 +137,7 @@
             this.trabalhosManuaisToolStripMenuItem.Name = "trabalhosManuaisToolStripMenuItem";
             this.trabalhosManuaisToolStripMenuItem.Size = new System.Drawing.Size(79, 21);
             this.trabalhosManuaisToolStripMenuItem.Text = "Tecnologia";
+            this.trabalhosManuaisToolStripMenuItem.Click += new System.EventHandler(this.trabalhosManuaisToolStripMenuItem_Click);
             // 
             // trabalhosManuaisToolStripMenuItem1
             // 
@@ -137,6 +145,7 @@
             this.trabalhosManuaisToolStripMenuItem1.Name = "trabalhosManuaisToolStripMenuItem1";
             this.trabalhosManuaisToolStripMenuItem1.Size = new System.Drawing.Size(124, 21);
             this.trabalhosManuaisToolStripMenuItem1.Text = "Trabalhos Manuais";
+            this.trabalhosManuaisToolStripMenuItem1.Click += new System.EventHandler(this.trabalhosManuaisToolStripMenuItem1_Click);
             // 
             // guna2TextBox1
             // 
@@ -161,6 +170,7 @@
             this.guna2TextBox1.SelectedText = "";
             this.guna2TextBox1.Size = new System.Drawing.Size(442, 25);
             this.guna2TextBox1.TabIndex = 19;
+            this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             this.guna2TextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guna2TextBox1_KeyPress);
             // 
             // label1
@@ -255,10 +265,10 @@
         private System.Windows.Forms.ToolStripMenuItem tecnologiaEProgramaçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trabalhosManuaisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trabalhosManuaisToolStripMenuItem1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button18;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListView listView1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button18;
     }
 }
