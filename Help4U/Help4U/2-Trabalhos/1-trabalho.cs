@@ -44,7 +44,7 @@ namespace Help4U
         private void trabalho_Load(object sender, EventArgs e)
         {
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
-            string query = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado = 'Ativo' ;";
+            string query = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado1 = 'Ativo' ;";
 
             MySqlDataAdapter sda = new MySqlDataAdapter(query, connectionString);
             DataTable dt = new DataTable();
@@ -122,7 +122,7 @@ namespace Help4U
             listView1.Clear();
 
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
-            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado = 'Ativo' and Tipo = 'construção' ;";
+            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado1 = 'Ativo' and Tipo = 'construção' ;";
 
             MySqlDataAdapter sda = new MySqlDataAdapter(query1, connectionString);
             DataTable dt = new DataTable();
@@ -180,7 +180,7 @@ namespace Help4U
             listView1.Clear();
 
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
-            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado = 'Ativo' and Tipo = 'design' ;";
+            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado1 = 'Ativo' and Tipo = 'design' ;";
 
             MySqlDataAdapter sda = new MySqlDataAdapter(query1, connectionString);
             DataTable dt = new DataTable();
@@ -238,7 +238,7 @@ namespace Help4U
             listView1.Clear();
 
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
-            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado = 'Ativo' and Tipo = 'Escrita e tradução' ;";
+            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado1 = 'Ativo' and Tipo = 'Escrita e tradução' ;";
 
             MySqlDataAdapter sda = new MySqlDataAdapter(query1, connectionString);
             DataTable dt = new DataTable();
@@ -296,7 +296,7 @@ namespace Help4U
             listView1.Clear();
 
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
-            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado = 'Ativo' and Tipo = 'Estilo de Vida' ;";
+            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado1 = 'Ativo' and Tipo = 'Estilo de Vida' ;";
 
             MySqlDataAdapter sda = new MySqlDataAdapter(query1, connectionString);
             DataTable dt = new DataTable();
@@ -354,7 +354,7 @@ namespace Help4U
             listView1.Clear();
 
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
-            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado = 'Ativo' and Tipo = 'Marketing' ;";
+            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado1 = 'Ativo' and Tipo = 'Marketing' ;";
 
             MySqlDataAdapter sda = new MySqlDataAdapter(query1, connectionString);
             DataTable dt = new DataTable();
@@ -412,7 +412,7 @@ namespace Help4U
             listView1.Clear();
 
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
-            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado = 'Ativo' and Tipo = 'Animação e vídeo' or Tipo = 'Áudio e musica' ;";
+            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado1 = 'Ativo' and Tipo = 'Animação e vídeo' or Tipo = 'Áudio e musica' ;";
 
             MySqlDataAdapter sda = new MySqlDataAdapter(query1, connectionString);
             DataTable dt = new DataTable();
@@ -470,7 +470,7 @@ namespace Help4U
             listView1.Clear();
 
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
-            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado = 'Ativo' and Tipo = 'Negocios' ;";
+            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado1 = 'Ativo' and Tipo = 'Negocios' ;";
 
             MySqlDataAdapter sda = new MySqlDataAdapter(query1, connectionString);
             DataTable dt = new DataTable();
@@ -528,7 +528,7 @@ namespace Help4U
             listView1.Clear();
 
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
-            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado = 'Ativo' and Tipo = 'Tecnologia e Programação' ;";
+            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado1 = 'Ativo' and Tipo = 'Tecnologia e Programação' ;";
 
             MySqlDataAdapter sda = new MySqlDataAdapter(query1, connectionString);
             DataTable dt = new DataTable();
@@ -586,7 +586,7 @@ namespace Help4U
             listView1.Clear();
 
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
-            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado = 'Ativo' and Tipo = 'Trabalhos Manuais' ;";
+            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado1 = 'Ativo' and Tipo = 'Trabalhos Manuais' ;";
 
             MySqlDataAdapter sda = new MySqlDataAdapter(query1, connectionString);
             DataTable dt = new DataTable();
@@ -644,7 +644,7 @@ namespace Help4U
             listView1.Clear();
 
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
-            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado = 'Ativo' and Titulo like '%"+ guna2TextBox1.Text +"%' ;";
+            string query1 = "Select * from trabalho INner join trabalho_fotos on IdTrabalho = Id_Trabalho where N_foto = 1 and Estado1 = 'Ativo' and Titulo like '%"+ guna2TextBox1.Text +"%' ;";
 
             MySqlDataAdapter sda = new MySqlDataAdapter(query1, connectionString);
             DataTable dt = new DataTable();

@@ -41,18 +41,9 @@ namespace Help4U
                 label9.Text = dt.Rows[0][8].ToString();
                 label6.Text = dt.Rows[0][6].ToString();
                 guna2TextBox1.Text = dt.Rows[0][12].ToString();
-
-                string especialidade = dt.Rows[0][11].ToString();
-                
-             if (especialidade == "" )
-                {
-                    pictureBox15.BorderStyle = BorderStyle.Fixed3D;
-                }
-                else if (especialidade == "")
-                {
-
-                } 
-
+                label5.Text = dt.Rows[0][11].ToString();
+                label8.Text = dt.Rows[0][4].ToString();
+                label10.Text = dt.Rows[0][0].ToString();
 
 
                 byte[] img = (byte[])dt.Rows[0][16];
@@ -76,11 +67,19 @@ namespace Help4U
         private void guna2Button1_Click(object sender, EventArgs e)
         {
 
+        FazerPedido fp = new FazerPedido();
+            fp.Show();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-              
+            Denuncia dn = new Denuncia();
+            dn.Show();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
     }

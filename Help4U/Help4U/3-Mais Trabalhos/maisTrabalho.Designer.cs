@@ -319,7 +319,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(72, 13);
             this.label10.TabIndex = 54;
-            this.label10.Text = "Codigo Postal";
+            this.label10.Text = "Código Postal";
             // 
             // label11
             // 
@@ -331,6 +331,7 @@
             this.label11.TabIndex = 56;
             this.label11.Text = "Verifique que inseriu todos os dados corretamente*";
             this.label11.Visible = false;
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // maskedTextBox1
             // 

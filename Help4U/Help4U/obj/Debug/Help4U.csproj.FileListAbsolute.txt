@@ -101,7 +101,6 @@ C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.o
 C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.procPerfil.resources
 C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.adm_Trabalho.resources
 C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.Login.resources
-C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.Pedidos.PedidoUser.resources
 C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.Conta_Config.resources
 C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.Perfil_Config.resources
 C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.perfil.resources
@@ -109,7 +108,6 @@ C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.P
 C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.perfil_Senha.resources
 C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.definicoes_perfilPessoal.resources
 C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.Properties.Resources.resources
-C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.removerConta.resources
 C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.top1.resources
 C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.top2.resources
 C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.csproj.GenerateResource.cache
@@ -118,4 +116,7 @@ C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.c
 C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.exe
 C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.pdb
 C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.InfoTrabalho.resources
-C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.PedidosHistorico.resources
+C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.Denuncia.resources
+C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.TrabalhoHistorico.resources
+C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.FazerPedido.resources
+C:\Users\2005h\Desktop\Git_Projects\h4u-complet\Help4U\Help4U\obj\Debug\Help4U.MeusPedidos.resources

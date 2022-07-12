@@ -138,7 +138,7 @@ namespace Help4U
             if (result1 == DialogResult.Yes)
             {
               
-                string query = "Update `trabalho` SET `Estado`= 'Pendente' , `QuemRealizou` = '" + Login.idlocal + "' where IdTrabalho =  '" + trabalho.selectwork + "'  ";
+                string query = "Update `trabalho` SET `Estado1`= 'Pendente' , `QuemRealizou` = '" + Login.idlocal + "' where IdTrabalho =  '" + trabalho.selectwork + "'  ";
 
                 MySqlConnection databaseConnection = new MySqlConnection(connectionString);
                 MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
@@ -150,7 +150,7 @@ namespace Help4U
                     MySqlDataReader myReader = commandDatabase.ExecuteReader();
                     databaseConnection.Close();
 
-
+                    this.Close();
                     //MessageBox.Show("Trabalho inserido");
 
                 }

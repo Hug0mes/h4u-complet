@@ -256,12 +256,12 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(25, 466);
+            this.label8.Location = new System.Drawing.Point(40, 466);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(182, 13);
+            this.label8.Size = new System.Drawing.Size(146, 13);
             this.label8.TabIndex = 53;
-            this.label8.Text = "Deveram ter no mínimo 8 caracteres.";
+            this.label8.Text = "Verifique a sua palavra-passe";
             this.label8.Visible = false;
             // 
             // label9
@@ -271,9 +271,9 @@
             this.label9.Location = new System.Drawing.Point(21, 448);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(186, 13);
+            this.label9.Size = new System.Drawing.Size(187, 13);
             this.label9.TabIndex = 55;
-            this.label9.Text = "palavras-passes não correspondentes";
+            this.label9.Text = "Palavras-passes não correspondentes";
             this.label9.Visible = false;
             // 
             // perfil_Senha

@@ -80,11 +80,23 @@
     <Compile Include="2-Trabalhos\Trabalhos Historico.Designer.cs">
       <DependentUpon>Trabalhos Historico.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pedidos\PedidoUser.cs">
+    <Compile Include="1-Principal\Denuncia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pedidos\PedidoUser.Designer.cs">
-      <DependentUpon>PedidoUser.cs</DependentUpon>
+    <Compile Include="1-Principal\Denuncia.Designer.cs">
+      <DependentUpon>Denuncia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos\MeusPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedidos\MeusPedidos.Designer.cs">
+      <DependentUpon>MeusPedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos\FazerPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedidos\FazerPedido.Designer.cs">
+      <DependentUpon>FazerPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="Perfil-Pessoal\definicoes_perfilPessoal.cs">
       <SubType>Form</SubType>
@@ -148,12 +160,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="1-Principal\removerConta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="1-Principal\removerConta.Designer.cs">
-      <DependentUpon>removerConta.cs</DependentUpon>
-    </Compile>
     <Compile Include="Tops\top1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     <Compile Include="2-Trabalhos\1-trabalho.Designer.cs">
       <DependentUpon>1-trabalho.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="1-Principal\Denuncia.resx">
+      <DependentUpon>Denuncia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="2-Trabalhos\1-trabalho.resx">
       <DependentUpon>1-trabalho.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,14 +199,17 @@
     <EmbeddedResource Include="1-Principal\adm_Trabalho.resx">
       <DependentUpon>adm_Trabalho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pedidos\FazerPedido.resx">
+      <DependentUpon>FazerPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="2-Trabalhos\Trabalhos Historico.resx">
       <DependentUpon>Trabalhos Historico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pedidos\PedidoUser.resx">
-      <DependentUpon>PedidoUser.cs</DependentUpon>
+    <EmbeddedResource Include="Pedidos\MeusPedidos.resx">
+      <DependentUpon>MeusPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Perfil-Pessoal\3-conta-Config.resx">
       <DependentUpon>3-conta-Config.cs</DependentUpon>
@@ -227,9 +239,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="1-Principal\removerConta.resx">
-      <DependentUpon>removerConta.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Tops\top1.resx">
       <DependentUpon>top1.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +315,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Denuncia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trabalhos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pedidos.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

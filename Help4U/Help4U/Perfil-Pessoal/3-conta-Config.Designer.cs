@@ -64,6 +64,7 @@
             this.guna2Button5.TabIndex = 65;
             this.guna2Button5.Text = "Excluir Conta";
             this.guna2Button5.UseTransparentBackground = true;
+            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
             // 
             // label10
             // 
@@ -119,6 +120,7 @@
             this.checkBox1.TabIndex = 69;
             this.checkBox1.Text = "Disponivel";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // checkBox3
             // 
@@ -130,6 +132,7 @@
             this.checkBox3.TabIndex = 71;
             this.checkBox3.Text = "Indisponível";
             this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // label2
             // 

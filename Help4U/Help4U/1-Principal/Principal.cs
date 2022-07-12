@@ -96,7 +96,7 @@ namespace Help4U
         {
             //Verificar se é ADM
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
-            string query = "Select * from users where Adm = 1 and Id = '" + Login.idlocal + "'; ";
+            string query = "Select * from users where Adm = '1' and Id = '" + Login.idlocal + "'; ";
 
             MySqlDataAdapter sda = new MySqlDataAdapter(query, connectionString);
             DataTable dataTable = new DataTable();
@@ -132,7 +132,7 @@ namespace Help4U
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
@@ -152,12 +152,27 @@ namespace Help4U
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-            loadform(new PedidosHistorico());
+            loadform(new TrabalhoHistorico());
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             loadform(new adm_Trabalho());
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+           loadform(new MeusPedidos());
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            loadform(new TrabalhoHistorico());
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            loadform(new MeusPedidos());
         }
     }
 }

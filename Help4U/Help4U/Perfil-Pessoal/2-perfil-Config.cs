@@ -25,9 +25,9 @@ namespace Help4U
            panel3.Visible = true;
            panel4.Visible = false;
 
-            comboBox1.Items.Add("Mascolino");
+            comboBox1.Items.Add("Masculino");
             comboBox1.Items.Add("Feminino");
-            comboBox1.Items.Add("Outro");
+            comboBox1.Items.Add("Outro...");
 
             comboBox2.Items.Add("Aveiro");
             comboBox2.Items.Add("Beja");
@@ -55,7 +55,7 @@ namespace Help4U
             panel4.Visible = true;
 
             guna2TextBox2.Clear();
-            guna2TextBox3.Clear();
+           
             guna2TextBox4.Clear();
             guna2TextBox1.Clear();
             
@@ -68,27 +68,108 @@ namespace Help4U
 
         private void Perfil_Config_Load(object sender, EventArgs e)
         {
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
+
+            try
+            {
+                String query1 = "Select * from users where Id = '" + Login.idlocal + "'";
+                MySqlDataAdapter da = new MySqlDataAdapter(query1, connectionString);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                label1.Text = dt.Rows[0][3].ToString();
+
+                label16.Text = dt.Rows[0][1].ToString();
+                label10.Text = dt.Rows[0][3].ToString();
+                label11.Text = dt.Rows[0][4].ToString();
+                label25.Text = dt.Rows[0][6].ToString();
+                label22.Text = dt.Rows[0][9].ToString();
+                label23.Text = dt.Rows[0][10].ToString();
+                label24.Text = dt.Rows[0][5].ToString();
+
+
+                da.Dispose();
+
+            }
+            catch (Exception ex)
+            {  // Show any error message.
+                MessageBox.Show(ex.Message);
+            }
+
+
+
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            if (guna2TextBox2.Text  == "" | guna2TextBox3.Text == "" | guna2TextBox3.Text == "" | guna2TextBox4.Text == "" | comboBox1.Text == "" | comboBox2.Text == "")
-            {
-                MessageBox.Show("Erro");
-            }
 
-            else
+
+
+            if (guna2TextBox2.Text  == "" || guna2TextBox4.Text == "" | comboBox1.Text == "" | comboBox2.Text == "")
             {
-                //Salvar na info na BD e limpar 
+                MessageBox.Show("Preencha todos os campos");
+            }else
+            {
+
+
+                try
+                {
+
+                    //Salvar na info na BD e limpar 
+                    string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
+
+                string query1 =" UPDATE `users` SET `Email`= '"+guna2TextBox1.Text+"',`Nome`= '"+guna2TextBox2.Text+"',`Genero`= '"+comboBox1.SelectedItem.ToString() +"',`Dtn`= '"+ dateTimePicker1.Value.ToString("yyyy-MM-dd")+"',`Regiao`= '"+ comboBox2.SelectedItem.ToString() +"',`Morada`= '"+guna2TextBox4.Text +"',`Codigo_Postal`= '"+ maskedTextBox1.Text +"' WHERE Id = '" + Login.idlocal+"' ";
+
+                MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+                MySqlCommand commandDatabase = new MySqlCommand(query1, databaseConnection);
+
+                commandDatabase.CommandTimeout = 60;
+                MySqlDataReader reader;
+
+
+                databaseConnection.Open();
+                reader = commandDatabase.ExecuteReader();
+                databaseConnection.Close();
+
+
+
+
+                    String query2 = "Select * from users where Id = '" + Login.idlocal + "'";
+                    MySqlDataAdapter da = new MySqlDataAdapter(query2, connectionString);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    label1.Text = dt.Rows[0][3].ToString();
+
+                    label16.Text = dt.Rows[0][1].ToString();
+                    label10.Text = dt.Rows[0][3].ToString();
+                    label11.Text = dt.Rows[0][4].ToString();
+                    label25.Text = dt.Rows[0][6].ToString();
+                    label22.Text = dt.Rows[0][9].ToString();
+                    label23.Text = dt.Rows[0][10].ToString();
+                    label24.Text = dt.Rows[0][5].ToString();
+
+
+                    da.Dispose();
+
+                }
+                catch (Exception ex)
+                {  // Show any error message.
+                    MessageBox.Show(ex.Message);
+                }
+
+
+
+
 
                 panel3.Visible = false;
                 panel1.Visible = true;
                 panel4.Visible = true;
 
                 guna2TextBox2.Clear();
-                guna2TextBox3.Clear();
+               
                 guna2TextBox4.Clear();
                 guna2TextBox1.Clear();
 

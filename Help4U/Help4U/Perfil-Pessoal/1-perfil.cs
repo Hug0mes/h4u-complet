@@ -22,19 +22,15 @@ namespace Help4U
 
         int i = 0;
         int j = 0;
-
+        int x = 0;
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            guna2Button1.Visible = false;
-       
-            guna2TextBox1.Enabled = true;
+         
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            guna2Button1.Visible = true;
          
-            guna2TextBox1.Enabled = false;
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
@@ -46,10 +42,7 @@ namespace Help4U
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            guna2Button1.Visible = true;
          
-
-            guna2TextBox1.Enabled = false;
         }
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
@@ -61,115 +54,7 @@ namespace Help4U
 
         private void label5_Click(object sender, EventArgs e)
         {
-           
-
-                if (i > 0 || j >0)
-            {
-                
-                DialogResult dialogResult = MessageBox.Show("Realizou mudanças ao seu perfil", "Deseja guardar as alterações feiras? ", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-
-
-                    try
-                    {
-
-                string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
-
-
-                MySqlConnection databaseConnection = new MySqlConnection(connectionString);
-                MemoryStream ms1 = new MemoryStream();
-                guna2CirclePictureBox1.Image.Save(ms1, ImageFormat.Png);
-                byte[] pic_arr1 = new byte[ms1.Length];
-                ms1.Position = 0;
-                ms1.Read(pic_arr1, 0, pic_arr1.Length);
-
-                databaseConnection.Open();
-
-                MySqlCommand cmd1 = new MySqlCommand("update userfotos set foto = @img1 where idUsers = '"+ Login.idlocal +"' ", databaseConnection);
-                cmd1.Parameters.AddWithValue("@img1", pic_arr1);
-
-                int n1 = cmd1.ExecuteNonQuery();
-
-                databaseConnection.Close();
-
-
-                        string query1 = "UPDATE users SET Interesses = ''  WHERE id = '" + Login.idlocal + "'";
-
-                       
-
-                        switch (j) {
-                        case 11:
-
-                                query1 = "UPDATE users SET Interesses = 'design' WHERE id = '" + Login.idlocal + "' ";
-
-                                break;
-                        case 12:
-
-                                query1 = "UPDATE users SET Interesses = 'Escrita e tradução' WHERE id = '" + Login.idlocal + "' ";
-
-
-                                break;
-                        case 13:
-
-
-                                query1 = "UPDATE users SET Interesses = 'Animação e vídeo' WHERE id = '" + Login.idlocal + "' ";
-
-                                break;
-                        case 14:
-
-                                query1 = "UPDATE users SET Interesses = 'Áudio e musica' WHERE id = '" + Login.idlocal + "' ";
-
-
-                                break;
-                        case 15:
-
-                                query1 = "UPDATE users SET Interesses = 'Tecnologia e Programação' WHERE id = '" + Login.idlocal + "' ";
-
-
-                                break;
-                        case 16:
-
-                                query1 = "UPDATE users SET Interesses = 'Negocios' WHERE id = '" + Login.idlocal + "' ";
-
-
-                                break;
-                        case 17:
-
-                                query1 = "UPDATE users SET Interesses = 'Estilo de Vida' WHERE id = '" + Login.idlocal + "' ";
-
-                                break;
-                    }
-
-
-            
-
-                        MySqlCommand commandDatabase = new MySqlCommand(query1, databaseConnection);
-                        commandDatabase.CommandTimeout = 60;
-                        MySqlDataReader reader;
-
-                 
-                        databaseConnection.Open();
-                        reader = commandDatabase.ExecuteReader();
-
-                        databaseConnection.Close();
-
-                }
-    catch (Exception ex)
-                {
-                    // Ops, maybe the id doesn't exists ?
-                    MessageBox.Show(ex.Message);
-                }
-
-
-
-            }
-                else if (dialogResult == DialogResult.No)
-                {
-                    //do something else
-                }
-            }
-
+          
             Principal principal = new Principal();
             principal.Show();
             this.Close();
@@ -184,7 +69,7 @@ namespace Help4U
             {
                guna2CirclePictureBox1.Image = new Bitmap(open.FileName);
 
-                i = 1;
+                x = 1;
                 label4.Visible = true;
             }
         }
@@ -199,13 +84,7 @@ namespace Help4U
         {
 
             j = 11;
-            pictureBox11.BorderStyle = BorderStyle.Fixed3D;
-            pictureBox12.BorderStyle = BorderStyle.None;
-            pictureBox13.BorderStyle = BorderStyle.None;
-            pictureBox14.BorderStyle = BorderStyle.None;
-            pictureBox15.BorderStyle = BorderStyle.None;
-            pictureBox16.BorderStyle = BorderStyle.None;
-            pictureBox17.BorderStyle = BorderStyle.None;
+           
             i = 1;
             label4.Visible = true;
         }
@@ -214,13 +93,7 @@ namespace Help4U
         {
 
             j = 12;
-            pictureBox11.BorderStyle = BorderStyle.None;
-            pictureBox12.BorderStyle = BorderStyle.Fixed3D;
-            pictureBox13.BorderStyle = BorderStyle.None;
-            pictureBox14.BorderStyle = BorderStyle.None;
-            pictureBox15.BorderStyle = BorderStyle.None;
-            pictureBox16.BorderStyle = BorderStyle.None;
-            pictureBox17.BorderStyle = BorderStyle.None;
+         
             i = 1;
             label4.Visible = true;
         }
@@ -229,14 +102,7 @@ namespace Help4U
         {
 
             j = 13;
-            pictureBox11.BorderStyle = BorderStyle.None;
-            pictureBox12.BorderStyle = BorderStyle.None;
-            pictureBox13.BorderStyle = BorderStyle.Fixed3D;
-            pictureBox14.BorderStyle = BorderStyle.None;
-            pictureBox15.BorderStyle = BorderStyle.None;
-            pictureBox16.BorderStyle = BorderStyle.None;
-            pictureBox17.BorderStyle = BorderStyle.None;
-            i=1;
+           
             label4.Visible = true;
         }
 
@@ -244,63 +110,67 @@ namespace Help4U
         {
 
             j = 14;
-            pictureBox11.BorderStyle = BorderStyle.None;
-            pictureBox12.BorderStyle = BorderStyle.None;
-            pictureBox13.BorderStyle = BorderStyle.None;
-            pictureBox14.BorderStyle = BorderStyle.Fixed3D;
-            pictureBox15.BorderStyle = BorderStyle.None;
-            pictureBox16.BorderStyle = BorderStyle.None;
-            pictureBox17.BorderStyle = BorderStyle.None;
-            i = 1;
-            label4.Visible = true;
+       
         }
 
         private void pictureBox15_Click(object sender, EventArgs e)
         {
 
-            j = 15;
-            pictureBox11.BorderStyle = BorderStyle.None;
-            pictureBox12.BorderStyle = BorderStyle.None;
-            pictureBox13.BorderStyle = BorderStyle.None;
-            pictureBox14.BorderStyle = BorderStyle.None;
-            pictureBox15.BorderStyle = BorderStyle.Fixed3D;
-            pictureBox16.BorderStyle = BorderStyle.None;
-            pictureBox17.BorderStyle = BorderStyle.None;
-            i = 1;
-            label4.Visible = true;
         }
 
         private void pictureBox16_Click(object sender, EventArgs e)
         {
 
-            j = 16;
-            pictureBox11.BorderStyle = BorderStyle.None;
-            pictureBox12.BorderStyle = BorderStyle.None;
-            pictureBox13.BorderStyle = BorderStyle.None;
-            pictureBox14.BorderStyle = BorderStyle.None;
-            pictureBox15.BorderStyle = BorderStyle.None;
-            pictureBox16.BorderStyle = BorderStyle.Fixed3D;
-            pictureBox17.BorderStyle = BorderStyle.None;
-            i = 1;
-            label4.Visible = true;
         }
 
         private void pictureBox17_Click(object sender, EventArgs e)
         {
 
-            j = 17;
-            pictureBox11.BorderStyle = BorderStyle.None;
-            pictureBox12.BorderStyle = BorderStyle.None;
-            pictureBox13.BorderStyle = BorderStyle.None;
-            pictureBox14.BorderStyle = BorderStyle.None;
-            pictureBox15.BorderStyle = BorderStyle.None;
-            pictureBox16.BorderStyle = BorderStyle.None;
-            pictureBox17.BorderStyle = BorderStyle.Fixed3D;
-            i = 1;
-            label4.Visible = true;
+        
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+           
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try { 
+
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
+
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+
+
+            string query1 = "UPDATE users SET Interesses = '"+ comboBox2.SelectedItem.ToString() +"'  WHERE id = '" + Login.idlocal + "'";
+
+            MySqlCommand commandDatabase = new MySqlCommand(query1, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+
+
+            databaseConnection.Open();
+            reader = commandDatabase.ExecuteReader();
+
+            databaseConnection.Close();
+
+        }
+    catch (Exception ex)
+                {
+                    // Ops, maybe the id doesn't exists ?
+                    MessageBox.Show(ex.Message);
+                }
+
+}
+
+        private void perfil_Load(object sender, EventArgs e)
         {
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
 
@@ -311,24 +181,58 @@ namespace Help4U
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
+                label10.Text = dt.Rows[0][0].ToString();
+                label7.Text = dt.Rows[0][1].ToString();
+                label6.Text = dt.Rows[0][6].ToString();
                 label1.Text = dt.Rows[0][3].ToString();
+                label9.Text = dt.Rows[0][8].ToString();
+
+                comboBox2.Text = dt.Rows[0][11].ToString();
+                textBox1.Text = dt.Rows[0][12].ToString();
+
 
                 byte[] img = (byte[])dt.Rows[0][16];
                 MemoryStream ms = new MemoryStream(img);
                 guna2CirclePictureBox1.Image = Image.FromStream(ms);
                 da.Dispose();
 
+
+
             }
             catch (Exception ex)
             {  // Show any error message.
                 MessageBox.Show(ex.Message);
             }
-
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+            try
+            {
+
+                string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
+
+                MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+
+
+                string query1 = "UPDATE users SET Descricao = '" + textBox1.Text + "'  WHERE id = '" + Login.idlocal + "'";
+
+                MySqlCommand commandDatabase = new MySqlCommand(query1, databaseConnection);
+                commandDatabase.CommandTimeout = 60;
+                MySqlDataReader reader;
+
+
+                databaseConnection.Open();
+                reader = commandDatabase.ExecuteReader();
+
+                databaseConnection.Close();
+
+            }
+            catch (Exception ex)
+            {  // Show any error message.
+                MessageBox.Show(ex.Message);
+            }
         }
-    }
+        }
 }

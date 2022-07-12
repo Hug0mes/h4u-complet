@@ -48,7 +48,6 @@ namespace Help4U
         {
             if (guna2TextBox1.Text.Length == 0 || guna2TextBox2.Text.Length == 0)
             {
-
                 label1.Visible = true;
             }
 
@@ -59,12 +58,31 @@ namespace Help4U
             DataTable dataTable = new DataTable();
             sda.Fill(dataTable);
 
+
             if (dataTable.Rows.Count >= 1)
             {
                 //guardar id do utilizador currente
                 foreach (DataRow row in dataTable.Rows)
                 {
                     idlocal = row[0].ToString();
+                    string estd = row[8].ToString();
+
+                    if (estd == "banido")
+                    {
+
+                        MessageBox.Show("Voçe foi banido!!");
+
+                    }else{
+
+                Principal principal = new Principal();
+                    principal.Show();
+                    this.Visible = false;
+                    }
+
+
+                 
+
+
                 }
 
 
@@ -104,9 +122,6 @@ namespace Help4U
                 }
 
 
-                Principal principal = new Principal();
-                principal.Show();
-                this.Visible = false;
             }
             else
             {

@@ -57,7 +57,7 @@ namespace Help4U
         {
 
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
-            string query = "Select Id,Nome,Foto from users INner join userfotos on Id = IdUsers;";
+            string query = "Select Id,Nome,Foto from users INner join userfotos on Id = IdUsers where Estado = 'Disponível';";
 
             MySqlDataAdapter sda = new MySqlDataAdapter(query, connectionString);
             DataTable dt = new DataTable();
@@ -70,48 +70,48 @@ namespace Help4U
             foreach (DataRow row in dt.Rows)
             {
 
-                try 
-                { 
+                try
+                {
 
-                images.ColorDepth = ColorDepth.Depth32Bit;
+                    images.ColorDepth = ColorDepth.Depth32Bit;
 
-                listView1.LargeImageList = images;
-                listView1.LargeImageList.ImageSize = new System.Drawing.Size(110, 110);
+                    listView1.LargeImageList = images;
+                    listView1.LargeImageList.ImageSize = new System.Drawing.Size(110, 110);
 
 
-                byte[] imagebyte = (byte[])(row[2]);
+                    byte[] imagebyte = (byte[])(row[2]);
 
-                MemoryStream image_stream = new MemoryStream(imagebyte);
+                    MemoryStream image_stream = new MemoryStream(imagebyte);
 
-                image_stream.Write(imagebyte, 0, imagebyte.Length);
+                    image_stream.Write(imagebyte, 0, imagebyte.Length);
 
-                images.Images.Add(row[2].ToString(), new Bitmap(image_stream));
+                    images.Images.Add(row[2].ToString(), new Bitmap(image_stream));
 
-                image_stream.Close();
+                    image_stream.Close();
 
-                ListViewItem item = new ListViewItem();
+                    ListViewItem item = new ListViewItem();
 
-                item.ImageIndex = i;
- 
-                item.Text = row["Nome"].ToString();
-                item.SubItems.Add(row["Id"].ToString());
+                    item.ImageIndex = i;
+
+                    item.Text = row["Nome"].ToString();
+                    item.SubItems.Add(row["Id"].ToString());
 
                     i += 1;
 
-                this.listView1.Items.Add(item);
+                    this.listView1.Items.Add(item);
+
+                }
+                catch (Exception ex)
+                {
+                    // Show any error message.
+                    MessageBox.Show(ex.Message);
+                }
+
 
             }
-            catch (Exception ex)
-            {
-                // Show any error message.
-                MessageBox.Show(ex.Message);
-            }
-
 
         }
 
-        }
-        
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -125,7 +125,7 @@ namespace Help4U
 
         private void listView1_MouseClick(object sender, MouseEventArgs e)
         {
-       
+
             selectUser = listView1.SelectedItems[0].SubItems[1].Text;
             outroPerfil op = new outroPerfil();
             op.Show();
@@ -136,6 +136,132 @@ namespace Help4U
         {
 
         }
-    }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+          
+            
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            listView1.Clear();
+
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
+            string query = "Select Id,Nome,Foto from users INner join userfotos on Id = IdUsers;";
+
+            MySqlDataAdapter sda = new MySqlDataAdapter(query, connectionString);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            int i = 0;
+
+            ImageList images = new ImageList();
+
+            foreach (DataRow row in dt.Rows)
+            {
+
+                try
+                {
+
+                    images.ColorDepth = ColorDepth.Depth32Bit;
+
+                    listView1.LargeImageList = images;
+                    listView1.LargeImageList.ImageSize = new System.Drawing.Size(110, 110);
+
+
+                    byte[] imagebyte = (byte[])(row[2]);
+
+                    MemoryStream image_stream = new MemoryStream(imagebyte);
+
+                    image_stream.Write(imagebyte, 0, imagebyte.Length);
+
+                    images.Images.Add(row[2].ToString(), new Bitmap(image_stream));
+
+                    image_stream.Close();
+
+                    ListViewItem item = new ListViewItem();
+
+                    item.ImageIndex = i;
+
+                    item.Text = row["Nome"].ToString();
+                    item.SubItems.Add(row["Id"].ToString());
+
+                    i += 1;
+
+                    this.listView1.Items.Add(item);
+
+                }
+                catch (Exception ex)
+                {
+                    // Show any error message.
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
+        {
+            listView1.Clear();
+
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
+            string query = "Select Id,Nome,Foto from users INner join userfotos on Id = IdUsers where Nome Like '%" + guna2TextBox2.Text + "%' or Id Like '%" + guna2TextBox2.Text + "%' ;";
+
+            MySqlDataAdapter sda = new MySqlDataAdapter(query, connectionString);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            int i = 0;
+
+            ImageList images = new ImageList();
+
+            foreach (DataRow row in dt.Rows)
+            {
+
+                try
+                {
+
+                    images.ColorDepth = ColorDepth.Depth32Bit;
+
+                    listView1.LargeImageList = images;
+                    listView1.LargeImageList.ImageSize = new System.Drawing.Size(110, 110);
+
+
+                    byte[] imagebyte = (byte[])(row[2]);
+
+                    MemoryStream image_stream = new MemoryStream(imagebyte);
+
+                    image_stream.Write(imagebyte, 0, imagebyte.Length);
+
+                    images.Images.Add(row[2].ToString(), new Bitmap(image_stream));
+
+                    image_stream.Close();
+
+                    ListViewItem item = new ListViewItem();
+
+                    item.ImageIndex = i;
+
+                    item.Text = row["Nome"].ToString();
+                    item.SubItems.Add(row["Id"].ToString());
+
+                    i += 1;
+
+                    this.listView1.Items.Add(item);
+
+                }
+                catch (Exception ex)
+                {
+                    // Show any error message.
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+        }
+        }
 }
 
