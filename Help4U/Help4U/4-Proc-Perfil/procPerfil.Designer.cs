@@ -40,7 +40,7 @@
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Margin = new System.Windows.Forms.Padding(2);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(2, 627);
+            this.splitter1.Size = new System.Drawing.Size(2, 610);
             this.splitter1.TabIndex = 4;
             this.splitter1.TabStop = false;
             // 
@@ -51,7 +51,7 @@
             this.label1.Location = new System.Drawing.Point(2, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(790, 70);
+            this.label1.Size = new System.Drawing.Size(803, 70);
             this.label1.TabIndex = 5;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -61,9 +61,9 @@
             this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(32, 105);
+            this.listView1.Location = new System.Drawing.Point(74, 99);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(728, 434);
+            this.listView1.Size = new System.Drawing.Size(731, 511);
             this.listView1.TabIndex = 18;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged_1);

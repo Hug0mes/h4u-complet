@@ -216,7 +216,7 @@ namespace Help4U
         private void guna2Button6_Click(object sender, EventArgs e)
         {
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
-            string query1 = "Update trabalho Set Estado1 = 'Negado' where IdTrabalho = '" + label3.Text + "' ;";
+            string query1 = "Update trabalho Set Estado1 = 'Pendente' where IdTrabalho = '" + label3.Text + "' ;";
 
 
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);

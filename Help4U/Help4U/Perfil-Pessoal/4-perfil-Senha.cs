@@ -53,7 +53,12 @@ namespace Help4U
                     sda.Fill(dataTable);
 
 
-                    if (dataTable.Rows.Count >= 1)
+                    if (dataTable.Rows.Count == 0)
+                    {
+                        label8.Visible = true;
+
+                    }
+                    else
                     {
                         //atualizar password
                         string query1 = "Update users Set `Password` = '" + guna2TextBox3.Text + "' where Id = '" + Login.idlocal + "' ;";
@@ -69,11 +74,7 @@ namespace Help4U
                         databaseConnection.Open();
                         reader = commandDatabase.ExecuteReader();
                         databaseConnection.Close();
-
-                    }
-                    else
-                    {
-                        label8.Visible = true;
+                        
                     }
 
 

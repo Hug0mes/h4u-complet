@@ -34,7 +34,7 @@ namespace Help4U
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            open.Filter = "Image Files(*.jpg; *.png; *.jpeg; *.gif; *.bmp)|*.jpg; *.png; *.jpeg; *.gif; *.bmp";
             if (open.ShowDialog() == DialogResult.OK)
             {
                 pictureBox1.Image = new Bitmap(open.FileName);
@@ -45,7 +45,7 @@ namespace Help4U
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            open.Filter = "Image Files(*.jpg; *.png; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.png; *.gif; *.bmp";
             if (open.ShowDialog() == DialogResult.OK)
             {
                 pictureBox2.Image = new Bitmap(open.FileName);
@@ -57,7 +57,7 @@ namespace Help4U
         private void pictureBox3_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            open.Filter = "Image Files(*.jpg; *.png; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.png; *.gif; *.bmp";
             if (open.ShowDialog() == DialogResult.OK)
             {
                 pictureBox3.Image = new Bitmap(open.FileName);
@@ -68,7 +68,7 @@ namespace Help4U
         private void pictureBox4_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            open.Filter = "Image Files(*.jpg; *.png; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.png; *.gif; *.bmp";
             if (open.ShowDialog() == DialogResult.OK)
             {
                 pictureBox4.Image = new Bitmap(open.FileName);
@@ -80,7 +80,7 @@ namespace Help4U
         private void pictureBox5_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            open.Filter = "Image Files(*.jpg; *.png; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.png; *.gif; *.bmp";
             if (open.ShowDialog() == DialogResult.OK)
             {
                 pictureBox5.Image = new Bitmap(open.FileName);
@@ -231,6 +231,10 @@ namespace Help4U
                     comboBox2.Items.Clear();
                     dateTimePicker1.Text = string.Empty;
                     pictureBox1.Image = Properties.Resources.Noimage1;
+                    pictureBox2.Image = Properties.Resources.Noimage1;
+                    pictureBox3.Image = Properties.Resources.Noimage1;
+                    pictureBox4.Image = Properties.Resources.Noimage1;
+                    pictureBox5.Image = Properties.Resources.Noimage1;
 
 
                     MessageBox.Show("Trabalho insrerido");

@@ -23,7 +23,7 @@ namespace Help4U
         bool mover = false;
         Point Pinicial;
         public static string idlocal;
-
+        string estd;
 
         // Minimizar
         private void guna2Button3_Click(object sender, EventArgs e)
@@ -64,24 +64,8 @@ namespace Help4U
                 //guardar id do utilizador currente
                 foreach (DataRow row in dataTable.Rows)
                 {
-                    idlocal = row[0].ToString();
-                    string estd = row[8].ToString();
-
-                    if (estd == "banido")
-                    {
-
-                        MessageBox.Show("Voçe foi banido!!");
-
-                    }else{
-
-                Principal principal = new Principal();
-                    principal.Show();
-                    this.Visible = false;
-                    }
-
-
-                 
-
+                    idlocal = row["Id"].ToString();
+                     estd = row[8].ToString();
 
                 }
 
@@ -102,15 +86,13 @@ namespace Help4U
                     MySqlConnection databaseConnection = new MySqlConnection(connectionString);
                     MySqlCommand commandDatabase = new MySqlCommand(query2, databaseConnection);
                     commandDatabase.CommandTimeout = 60;
-                    
-                 
+
+
 
                     try
                     {
                         databaseConnection.Open();
                         MySqlDataReader myReader = commandDatabase.ExecuteReader();
-                        //MessageBox.Show("Imagem inserida");
-
                         databaseConnection.Close();
                     }
                     catch (Exception ex)
@@ -121,7 +103,18 @@ namespace Help4U
 
                 }
 
+                if (estd == "banido")
+                {
+                    MessageBox.Show("Voçe foi banido!!");
 
+                }
+                else
+                {
+                    Principal principal = new Principal();
+                    principal.Show();
+                    this.Visible = false;
+                }
+              
             }
             else
             {

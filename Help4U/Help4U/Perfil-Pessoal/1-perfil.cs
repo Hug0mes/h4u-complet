@@ -54,7 +54,44 @@ namespace Help4U
 
         private void label5_Click(object sender, EventArgs e)
         {
-          
+            if (x==1)
+            {
+                try
+                {
+
+                    string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=h4u;";
+
+                    MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+                    MemoryStream ms1 = new MemoryStream();
+                    guna2CirclePictureBox1.Image.Save(ms1, ImageFormat.Png);
+                    byte[] pic_arr1 = new byte[ms1.Length];
+                    ms1.Position = 0;
+                    ms1.Read(pic_arr1, 0, pic_arr1.Length);
+
+                    databaseConnection.Open();
+
+                    MySqlCommand cmd1 = new MySqlCommand("update userfotos set foto = @img1 where idUsers = '" + Login.idlocal + "' ", databaseConnection);
+                    cmd1.Parameters.AddWithValue("@img1", pic_arr1);
+
+                    int n1 = cmd1.ExecuteNonQuery();
+
+                    databaseConnection.Close();
+
+                }
+                catch (Exception ex)
+                {  // Show any error message.
+                    MessageBox.Show(ex.Message);
+                }
+
+
+
+
+
+            }
+
+
+
+
             Principal principal = new Principal();
             principal.Show();
             this.Close();
@@ -64,7 +101,7 @@ namespace Help4U
         {
 
             OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.png; *.gif; *.bmp)|*.jpg; *.jpeg; *.png; *.gif; *.bmp";
             if (open.ShowDialog() == DialogResult.OK)
             {
                guna2CirclePictureBox1.Image = new Bitmap(open.FileName);

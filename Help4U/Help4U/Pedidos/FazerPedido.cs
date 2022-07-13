@@ -57,9 +57,6 @@ namespace Help4U
                     MySqlDataReader myReader = commandDatabase.ExecuteReader();
                     databaseConnection.Close();
 
-
-                    MessageBox.Show("Trabalho inserido");
-
                 }
                 catch (Exception ex)
                 { MessageBox.Show(ex.Message); }

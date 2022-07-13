@@ -50,6 +50,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label8
@@ -94,7 +95,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(53, 321);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(262, 20);
+            this.textBox3.Size = new System.Drawing.Size(285, 20);
             this.textBox3.TabIndex = 95;
             // 
             // label9
@@ -166,7 +167,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(283, 209);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 20);
+            this.textBox2.Size = new System.Drawing.Size(88, 20);
             this.textBox2.TabIndex = 90;
             // 
             // textBox1
@@ -291,11 +292,21 @@
             this.guna2ControlBox2.TabIndex = 100;
             this.guna2ControlBox2.Click += new System.EventHandler(this.guna2ControlBox2_Click_1);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(370, 213);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(13, 13);
+            this.label3.TabIndex = 102;
+            this.label3.Text = "€";
+            // 
             // FazerPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 450);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.guna2ControlBox2);
             this.Controls.Add(this.label2);
@@ -352,5 +363,6 @@
         private System.Windows.Forms.Button button1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
+        private System.Windows.Forms.Label label3;
     }
 }

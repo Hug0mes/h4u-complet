@@ -111,21 +111,28 @@ namespace Help4U
             //imagem de Perfil
             try
             {
-            String query1 = "Select * from users Inner join userfotos on Id = IdUsers where Id = '" +  Login.idlocal + "'";
-            MySqlDataAdapter da = new MySqlDataAdapter(query1, connectionString);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-           
-            label1.Text = dt.Rows[0][3].ToString();
-            byte[] img = (byte[])dt.Rows[0][16];
-            MemoryStream ms = new MemoryStream(img);
-            guna2CirclePictureBox2.Image = Image.FromStream(ms);
-            da.Dispose();
+                String query1 = "Select * from users Inner join userfotos on Id = IdUsers where Id = '" + Login.idlocal + "'";
+                MySqlDataAdapter da = new MySqlDataAdapter(query1, connectionString);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                label1.Text = dt.Rows[0][3].ToString();
+                byte[] img = (byte[])dt.Rows[0][16];
+                MemoryStream ms = new MemoryStream(img);
+                guna2CirclePictureBox2.Image = Image.FromStream(ms);
+                da.Dispose();
 
             }
             catch (Exception ex)
             {  // Show any error message.
-                MessageBox.Show(ex.Message);
+                Principal pc = new Principal();
+               
+                this.Hide();
+
+                 
+                Login lg = new Login();
+                lg.Show();
+
             }
 
         }

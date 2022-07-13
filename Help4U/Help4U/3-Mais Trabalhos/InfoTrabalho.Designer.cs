@@ -91,6 +91,7 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(412, 205);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -214,7 +215,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(216, 18);
             this.label1.TabIndex = 24;
-            this.label1.Text = "Pertende realizar este trabalho?";
+            this.label1.Text = "Pretende realizar este trabalho?";
             // 
             // label12
             // 
@@ -418,6 +419,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InfoTrabalho";
+            this.Opacity = 0.99D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InfoTrabalho";
             this.Load += new System.EventHandler(this.InfoTrabalho_Load);

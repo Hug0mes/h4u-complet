@@ -65,18 +65,18 @@
             this.label2.Size = new System.Drawing.Size(406, 106);
             this.label2.TabIndex = 1;
             this.label2.Text = "Para a sua segurança, é altamente recomendável que escolha uma palavra-passe únic" +
-    "a, ou seja, que não seja usada em nenhuma outra conta ";
+    "a, ou seja, que não seja usada em nenhuma outra conta. ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 213);
+            this.label3.Location = new System.Drawing.Point(17, 213);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(150, 20);
+            this.label3.Size = new System.Drawing.Size(148, 20);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Palavra-passe Atual";
+            this.label3.Text = "Palavra-passe atual";
             // 
             // guna2TextBox1
             // 
@@ -96,7 +96,7 @@
             this.guna2TextBox1.MaxLength = 33;
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "palavra-passe atual";
+            this.guna2TextBox1.PlaceholderText = "Palavra-passe atual";
             this.guna2TextBox1.SelectedText = "";
             this.guna2TextBox1.Size = new System.Drawing.Size(184, 29);
             this.guna2TextBox1.TabIndex = 3;
